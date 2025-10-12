@@ -17,7 +17,7 @@ import { useState } from "react";
 import { useAppSelector, useAppDispatch } from "../store/hooks";
 import { TeamChoice } from "./SharedComponents";
 import { useIncPoints } from "../hooks/pointsHooks";
-import ChatMenu from "./ChatMenu";
+import { cheatingRulesList } from "../dialogue/dialogue-list";
 
 export default function MenuDropDown() {
   const teams = useAppSelector((state) => state.teams.value);
@@ -209,6 +209,17 @@ export default function MenuDropDown() {
     );
   };
 
+  const CheatingRules = () => {
+    return (
+      <div>
+        <div className="title">Cheating Rules</div>
+        {cheatingRulesList.map((r) => (
+          <p>{r}</p>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <div>
       <Modal
@@ -232,17 +243,9 @@ export default function MenuDropDown() {
           <div style={style} className="modal-content">
             <ToggleAutoSync />
           </div>
-        ) : modalRender === "chat" ? (
-          <div
-            style={{
-              ...style,
-              background: "rgb(46, 0, 63)",
-              width: "80%",
-              maxWidth: "400px",
-            }}
-            className="modal-content"
-          >
-            <ChatMenu />
+        ) : modalRender === "cheating" ? (
+          <div style={style} className="modal-content">
+            <CheatingRules />
           </div>
         ) : (
           <div style={style} className="modal-content">
@@ -275,20 +278,14 @@ export default function MenuDropDown() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleMenuClick("points")}>
-          <div className="menu-dropdown">Add Points</div>
-        </MenuItem>
-        <MenuItem onClick={handleMenuClick("teams")}>
-          <div className="menu-dropdown">Teams</div>
-        </MenuItem>
         <MenuItem onClick={handleMenuClick("code")}>
           <div className="menu-dropdown">Reset Code</div>
         </MenuItem>
-        <MenuItem onClick={handleMenuClick("chat")}>
-          <div className="menu-dropdown">Talk to Mort</div>
-        </MenuItem>
         <MenuItem onClick={handleMenuClick("autosync")}>
           <div className="menu-dropdown">Toggle Autosync</div>
+        </MenuItem>
+        <MenuItem onClick={handleMenuClick("cheating")}>
+          <div className="menu-dropdown">Cheating Rules</div>
         </MenuItem>
       </Menu>
     </div>

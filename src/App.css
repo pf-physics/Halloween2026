@@ -2,7 +2,7 @@
   background-color: #11100f;
   min-height: 100vh;
   color: #902ebb;
-  color: #63c328;
+  color: #9357fd;
   color: #f4831b;
   font-family: "Candy, Franklin Gothic Medium", "Arial Narrow", Arial,
     sans-serif;
@@ -39,14 +39,14 @@
 
 .App-header {
   background-color: #1c1c1c;
-  color: #86ff3c;
+  color: #9357fd;
   font-size: 20px;
   font-weight: bold;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px;
 }
 
 .App-link {
@@ -64,9 +64,9 @@
 
 input {
   background-color: transparent;
-  outline: 2px solid #86ff3c;
+  outline: 2px solid #9357fd;
   border: 0px;
-  color: #86ff3c;
+  color: #9357fd;
   font-size: 20px;
   border-radius: 5px;
   padding-top: 7px;
@@ -113,7 +113,7 @@ input {
 }
 
 .menu-dropdown {
-  color: #86ff3c;
+  color: #9357fd;
 }
 
 .modal-title {

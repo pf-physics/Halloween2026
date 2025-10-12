@@ -10,7 +10,7 @@ import { useGetPoints } from "./hooks/pointsHooks";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#63C328",
+      main: "#9357fd",
     },
     secondary: {
       main: "#F4831B",
@@ -21,6 +21,8 @@ const theme = createTheme({
 function App() {
   const fullScreen = useAppSelector((state) => state.misc.fullScreen);
   useGetPoints();
+
+  const screenSize = window.innerWidth;
 
   useEffect(() => {
     document.title = "Halloween 2025";
@@ -36,7 +38,7 @@ function App() {
         )}
         <div
           className="app-content"
-          style={{ maxWidth: fullScreen ? undefined : "400px" }}
+          style={{ maxWidth: fullScreen ? undefined : "500px" }}
         >
           <CodeHandler />
         </div>

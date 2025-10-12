@@ -4,6 +4,9 @@
   object-fit: cover;
   object-position: top;
   border-radius: 10px;
+  @media screen and (min-width: 768px) {
+    height: 400px;
+  }
 }
 
 .profile-small {
@@ -30,6 +33,10 @@
   padding-top: 20px;
   font-size: 20px;
   padding-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 30px;
+  }
 }
 
 .warn {

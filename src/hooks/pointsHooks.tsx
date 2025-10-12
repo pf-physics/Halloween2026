@@ -33,12 +33,14 @@ export const useGetPoints = () => {
   onValue(allPointsQ, (snapshot) => {
     const data = snapshot.val();
     if (typeof data === "object") {
-      const keys = Object.keys(data);
-      // sum all the points
-      const sum = keys.reduce((acc, key) => {
-        return acc + data[key];
-      }, 0);
-      dispatch(setPoints(sum));
+      if (data != undefined) {
+        const keys = Object.keys(data);
+        // sum all the points
+        const sum = keys.reduce((acc, key) => {
+          return acc + data[key];
+        }, 0);
+        dispatch(setPoints(sum));
+      }
     }
   });
 

@@ -95,6 +95,7 @@ export const useIncAllIndices = () => {
   const globalSceneValid = useAppSelector(
     (state) => state.globalSceneValid.value
   );
+  // TODO - while all the logic is running, don't allow user to press next (have a processing bool or something)
   const teams = useAppSelector((state) => state.teams.value);
 
   const dispatch = useAppDispatch();

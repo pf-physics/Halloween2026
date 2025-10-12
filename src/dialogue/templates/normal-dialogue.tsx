@@ -24,6 +24,7 @@ export type DialogueProps = {
   header?: string;
   resetFullScreen?: boolean;
   answerPoints?: number;
+  stopAudio?: boolean;
 };
 
 const NormalDialogue = ({
@@ -36,6 +37,7 @@ const NormalDialogue = ({
   resetFullScreen,
   header,
   answerPoints,
+  stopAudio,
 }: DialogueProps) => {
   const index = useAppSelector((state) => state.index.value);
   const playerIndex = useAppSelector((state) => state.playerIndex.value);
@@ -67,6 +69,8 @@ const NormalDialogue = ({
   useEffect(() => {
     if (audio !== undefined) {
       dispatch(setAudio(audio));
+    } else if (stopAudio) {
+      dispatch(setAudio(undefined));
     }
   }, [playerIndex]);
 
@@ -94,22 +98,61 @@ const NormalDialogue = ({
     jumpToCurrent();
   };
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Enter") {
+        handleNext();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    // Clean up on unmount or when `value` changes
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [playerIndex]);
+
   return (
     <div>
       <Dialogue header={header} text={text} image={image} />
       {answers.length > 0 && ansRequired && (
-        <input value={ans} onChange={(e) => setAns(e.target.value)} />
+        <input
+          value={ans}
+          autoFocus
+          onChange={(e) => setAns(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleNext();
+            }
+          }}
+        />
       )}
       <div className="buttons-row">
-        <Button color="primary" variant="contained" onClick={handleBack}>
+        <Button
+          color="primary"
+          variant="contained"
+          size={"large"}
+          onClick={handleBack}
+        >
           Back
         </Button>
-        <Button color="primary" variant="contained" onClick={handleNext}>
+        <Button
+          color="primary"
+          variant="contained"
+          size={"large"}
+          onClick={handleNext}
+        >
           Next
         </Button>
       </div>
       <div className="reset-index-row">
-        <Button color="primary" variant="contained" onClick={handleReset}>
+        <Button
+          color="primary"
+          variant="contained"
+          size={"large"}
+          onClick={handleReset}
+        >
           Jump to current
         </Button>
       </div>

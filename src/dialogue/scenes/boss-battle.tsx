@@ -32,7 +32,7 @@ const BossRules = () => {
 
   if (battleOver) {
     return (
-      <NormalDialogue text="The souls are free now... nothing left to fight" />
+      <NormalDialogue text="The amulet is sealed, nothing to fight, so go party!" />
     );
   }
 

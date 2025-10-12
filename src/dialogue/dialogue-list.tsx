@@ -1,54 +1,64 @@
 import NormalDialogue from "./templates/normal-dialogue";
-import introMusic from "../assets/audio/Intro_2024.mp3";
-import ghostsImg from "../assets/imgs/ghosts.png";
-import Sammy from "../assets/imgs/Sammy.jpg";
-import witch2Music from "../assets/audio/witches2.mp3";
+import introMusic from "../assets/audio/magic_halloween.mp3";
 import summoning from "../assets/audio/summoning.mp3";
-import cemteryImg from "../assets/imgs/cem2.jpg";
-import firstImg from "../assets/imgs/first_img.jpg";
+import firstImg from "../assets/imgs/cauldron_pumpkin.jpg";
+
 import graveMusic from "../assets/audio/Runescape_Halloween.mp3";
-//import sadSkeleton from "../assets/imgs/skeleton_sad_eyes.png"
+
 import shinySkeleton from "../assets/imgs/skeleton_shiny_eyes.png";
 import sheetGhost from "../assets/imgs/sheet-ghost.jpg";
-import ghostMusic from "../assets/audio/Ghost-Town-Myuu.mp3";
-import raveMusic from "../assets/audio/rave.mp3";
-import mort from "../assets/imgs/mort.png";
+
 import mort2 from "../assets/imgs/mort2.png";
 import rattler from "../assets/imgs/Rattler.png";
 import lil_ghost from "../assets/imgs/lil_ghost.png";
 import many_ghosts from "../assets/imgs/many_ghosts_freepik.jpg";
-import endCard from "../assets/imgs/HalloweenEnd.jpg";
-import skeletonSit from "../assets/imgs/sitting-skeleton-leaned-tree-dark-forest.jpg";
-import ominousMusic from "../assets/audio/ominous.mp3";
-import magicMusic from "../assets/audio/witches2.mp3";
 
-import TimerGame from "./scenes/timer";
+import endCard from "../assets/imgs/Halloween_Cauldron.jpg";
+import wizardArrival from "../assets/audio/Wizard_arrival.mp3";
 
-import PotionRules from "./scenes/potion";
+import headmaster from "../assets/imgs/headmaster.png";
+import necromancer from "../assets/imgs/necromancer1.jpg";
+import cheaterWitch from "../assets/imgs/sus witch.png";
+import shapeshifting_witch from "../assets/imgs/shapeshifting_witch.jpg";
+import potionsWitch from "../assets/imgs/potions_witch.png";
+import broomWitch from "../assets/imgs/broom_witch.png";
+import broomWitchScared from "../assets/imgs/broom_witch_scared.png";
+import broomWitchExasperated from "../assets/imgs/broom_witch_exasperated.png";
+import divinationWitch from "../assets/imgs/clairvoyance_witch.jpg";
+import duelWitch from "../assets/imgs/duel_witch.jpg";
+import darkMage from "../assets/imgs/curse_witch2.png";
+
 import BossBattle from "./scenes/boss-battle";
 import GhostDialogue from "./templates/ghost-dialogue";
-import RitualRules from "./scenes/ritual-instructions";
 
-export const graveDiggerImg = mort2;
-const rattlerImg = rattler;
-const tiredCorpseImage = skeletonSit;
+import normal_witch from "../assets/imgs/regular witch.png";
+
+import happy_witch from "../assets/imgs/happy_witch.png";
+import happy_eyes_witch from "../assets/imgs/happy_eyes_witch.png";
+import eyes_witch from "../assets/imgs/eyes_witch.png";
+import unhappy_witch from "../assets/imgs/unhappy_witch.png";
+import unhappy_eyes_witch from "../assets/imgs/unhappy_eyes_witch.png";
+import angry_witch from "../assets/imgs/angry_witch.png";
+
+import flabbergasted from "../assets/imgs/flabbergasted.gif";
+
+import possessed_witch from "../assets/imgs/possessed_3.png";
+import prudence from "../assets/imgs/prudence4.png";
+import wizard from "../assets/imgs/wizard.png";
+import witches2 from "../assets/audio/witches2.mp3";
+import newHalloween from "../assets/audio/New-Halloween-Theme.mp3";
+
+import halloweenGroove from "../assets/audio/Halloween-Groove.mp3";
+import halloweenHex from "../assets/audio/Halloween-Hex.mp3";
+
+const schoolName = "Grexmurium"; // urbs murium = city of rats, grex murium = swarm of rats, vicus felium = village of cats, bat = vespertilio
+const otherSchoolName = "Iusculum"; // soup
+const staffName = "Praeclarus";
+const headmasterName = "Mildred";
+
+// TODO delete - it's for the chat menu
+export const graveDiggerImg = headmaster;
 const lostSoulsImg = many_ghosts;
-const homeCorpseImg = shinySkeleton;
-const otherCorpseImg = sheetGhost;
-const corruptSoulImg = lil_ghost;
-const endMusic = magicMusic;
-
-const otherGraveDiggerName = "Rattler";
-
-// import GlobalDialogue from "./templates/normal-dialogue", basically the same...?
-
-// THE INDICES MIGHT NOT BE THE SAME! ahhh, okay think about it
-// globalDialogueScene = "lounge1", if both equal then okay lol
-// globalDialogue = true
-
-// don't forget the compooonnneeeent indices stuff
-
-// FUTURE - multiple endings
 
 const CharmRules = [
   "Coven Charm/Curse: In a group of 3, each roll a dice. If the average value is greater than 3, you can charm/curse someone",
@@ -59,129 +69,166 @@ const CharmRules = [
 ];
 
 const magicPower = "Halloween power";
-const rules = `The team who gets fewer points must take three penalties (3 sips or three squats )`;
+const rules = `1st place: 3 points, 2nd place, 2 points, 3rd place 1 point. Last place 3 penalties, 2nd to last 2 penalties, 3rd to last 1 penalty`;
 
 // TODO remove all audio I guess
 
-// TODO tombstone shapes
-const tombstoneRules = (
-  <NormalDialogue
-    header={"TOMBSTONE ARCHITECTURE"}
-    isGlobal={true}
-    text={[
-      `Everyone take a sheet of tombstone material (tin foil)`,
-      `When everyone is ready, start a timer for 3 minutes`,
-      `Make a tombstone by ripping the tin foil`,
-      `An angel tombstone gets 4 points`,
-      `A cross tombstone gets 2 points`,
-      `A regular tombstone gets 1 point`,
-      `If the lines are very wiggly, get half the points`,
-      `Charm: Get 4 minutes to make a tombstone`,
-      `Alternate Charm: Get 2 tries (within 3 minutes)`,
-      `Curse: Get 2 minutes to make a tombstone`,
-      `Game code: tombstone`,
-      rules,
-    ]}
-  />
-);
-
 // TODO DCDCDC the rules here
-const graveDiggingRules = (
+const wandMakingRules = (
   <NormalDialogue
     isGlobal={true}
-    header={"GRAVE DIGGING"}
+    header={"WAND MAKING"}
+    stopAudio={true}
     text={[
-      `Each team take a cemetery plot`,
-      `When everyone is ready, everyone start digging (eating the dirt)`,
-      `The first team to "find the thing" gets 6 points`,
-      `Game code: digging`,
+      `Everyone grab a base wand`,
+      `Using the materials provided, alter your wand so that it is in tune with your magic (make it look cool)`,
+      `When everyone's wand is complete, each student will be given three pellets to vote on their favourite wand.`,
       rules,
     ]}
   />
 );
 
-const corpseFindingRules = (
+// TODO - draw the examples
+const familiarSummoningRules = (
   <NormalDialogue
-    header={"CORPSE SEARCH"}
     isGlobal={true}
+    header={"FAMILIAR SUMMONING"}
     text={[
-      `Everyone grab an EMF. Use the emf to locate corpses.`,
-      `You have five minutes to find and dig up the corpses (a demonstration will be made)`,
-      `To dig up corpses, gently dig (rip) the dirt (wallpaper) until you find the corpse`,
-      `Each corpse is worth 2 points`,
-      `Charm: Get 6 minutes`,
-      `Curse: Get 4 minutes`,
-      `Game code: emf`,
+      `Everyone split up into pairs/groups. Using your camera flashlight, draw a picture of the creature you want to summon.`,
+      `Examples of what is accepted will be provided. If your desired animal is not on the list, exceptions can be made.`,
+      `Bonus points will be awarded to those who go above and beyond.`,
+      `Three points for complex version, 1 point for simple version`,
+      `Cheating: get one extra try. Failure to cheat: your first attempt is your only attempt`,
       rules,
     ]}
   />
 );
 
-const rescueCorpsesGame = (
+const summonSoulsRules = (
   <NormalDialogue
-    header={"RESCUE THE CORPSES"}
     isGlobal={true}
+    header={"SUMMONING LOST SOULS"}
     text={[
-      `It's time to rescue the corpses! Because you are fresh ghosts, you haven't yet manifested your arms and legs. You can only move things with your mouths.`,
-      `Everyone grab a skewer and make two lines up to the corpses.`,
-      `When both teams are ready, move the corpses to the other side of the room, passing them from person to person.`,
-      `Count the number of corpses each team moved, this is the number of points they get.`,
-      `Charm: Get a 10 second head start`,
-      `Game code: rescue`,
+      `Attach a summoning charm to your wand. When everyone is ready, use the summoning charm to fish lost souls from the gate`,
+      `When time is up, the student with the most souls, wins.`,
+      `If necessary, split up into two groups.`,
+      `Cheating: get extra time (start early). Failure to cheat: get less time (start late). 7 seconds`, // DCDCDC - too much?
       rules,
     ]}
   />
 );
 
-const summonCrowGame = (
+const ghostCreationRules = (
   <NormalDialogue
-    header={"SUMMON CROW MESSENGERS"}
     isGlobal={true}
+    header={"GHOST COMMUNING"}
     text={[
-      `Investigate the graveyard by sending crow messengers.`,
-      `Each member take two pieces of "summoning paper" (black paper) and fold them into crows (paper airplane).`,
-      `One at a time, stand in front of the mirror beside the bookcase and throw the crow to the other cemetery.`,
-      `Everyone gets two tries`,
-      `2 points for getting it past the gate. 1 points for getting it in the room.`,
-      `One extra point if you attach a feather to your crow (and it makes it at least into the room)`,
-      `Charm: Throw the crow from the sink`,
-      `Curse: Throw the crow facing backwards`,
-      `Game code: crows`,
+      `Everyone grab a soul (balloon) and draw a face on it.`,
+      `Blow up the balloon as big as you can. Biggest balloon wins.`,
       rules,
     ]}
   />
 );
 
-// dinosaur
-// dragon
-const telepathyGame = (
+const ghostConnectionRules = (
   <NormalDialogue
-    header={"COMMUNICATE TELEPATHICALLY"}
     isGlobal={true}
+    header={"GHOST BONDING"}
     text={[
-      `Everyone grab a sheet of paper and a pen.`,
-      `Line up so you use the back of the person in front of you as a surface for drawing.`,
-      `The last person can use a wall as a surface.`,
-      `Ask the game master for what the drawing should be.`,
-      `The last person has to guess what the drawing is.`,
-      `The first team to guess correctly gets 6 points.`,
-      `Game code: telepathy`,
-      `Curse: One of the middle people can with their eyes closed/they don't use paper.`,
+      `Everyone take your ghost space out. When everyone is ready, use your wand to keep the ghost afloat. The person who keeps their ghost floating the longest, wins`,
+      `If everyone survives for 2 minutes, additional rules will be added`,
+      `If you break or spill anything in the room, automatically lose and take 10 penalties`,
+      rules,
     ]}
   />
 );
 
-const dissectionGame = (
+const shapeshiftingJudging = (
   <NormalDialogue
-    header={"DISSECT A CORPSE"}
     isGlobal={true}
+    header={"SHAPESHIFTING CONTEST"}
     text={[
-      `Head over to the morgue (near the other cemetery) and uncover the corpse.`,
-      `Use the knife to cut open the stomach.`,
-      `Get one point for each team member brave enough to reach in and grab a bone.`,
-      `Wash the bones with the cloth beside the corpse.`,
-      `game code: dissection`,
+      `Since everyone has already shapeshifted into something cool (costume), you can decide who gets the most points!`,
+      `Take three beads and vote for your top 3 favourite shapeshifters`,
+      `Top shapeshifter gets 4 points. 2nd and 3rd place get 3 points, 4th and 5th get 2 points. Everyone else who shapeshifted get 1 points. If you didn't shapeshift, get no points and take 3 penalties.`, // TODO - make sure this still makes sense!
     ]}
+  />
+);
+
+const shapeshiftingPractice = (
+  <NormalDialogue
+    isGlobal={true}
+    header={"SHAPESHIFTING PRACTICE"}
+    text={[
+      `Everyone take two small pieces of paper and write something to shapeshift into, and sign with your name. Put your the papers into the pot.`,
+      `One at a time, pick a paper and become (act out) what's written on the paper. Say the name of the person who wrote it beforehand so they know not to guess.`,
+      `You get one minute to act out a maximum of two papers`,
+      `Keep track of how many you guessed and how many you acted out to decide the winner of the challenge`,
+      rules,
+    ]}
+  />
+);
+
+const potionMaking = (
+  <NormalDialogue
+    isGlobal={true}
+    header={"POTION MAKING"}
+    text={[
+      `Time for a group project! Split into three groups. One group at a time, head to the potion making room and make a potion, following the instructions.`,
+      `The instructions may be vague but any experienced witch is very familiar with this potions, and knows which ingredients should be used, and would never use the poisoned ones by accident.`,
+      `You cannot taste or smell the ingredients before you use them. The assistant witch will be moderating your potion making.`,
+      `When each group has made a potion, you will taste test each other's potions to gauge which one is correct.`,
+      `Everyone take a sampling glass and split each potions amongst everyone. Rate your potion in terms of your favourite to least favourite.`,
+      `Those feeling daring can top off their samples with essence of nightmares (if you do it for one potion, you must do it for all)`,
+      `3 points to each member of the team with the best potion, second team members get 1 point`,
+      `Cheating: you can each smell one ingredient. EVERYONE must succeed at cheating for anyone to cheat. Failure to cheat: your secondary ingredient must be randomly picked.`,
+    ]}
+  />
+);
+
+const divinationGame = (
+  <NormalDialogue
+    isGlobal={true}
+    header={"DIVINATION"}
+    text={[
+      `Everyone grab a new sheet of paper`,
+      `2 minutes to write down who you think drew each picture`,
+      `The answers will be revealed and you can grade your own sheet.`,
+      `All correct = 3 points, 1-2 wrong = 2 points, 3 wrong = one point, 3-5 wrong = one penalty, 6+ wrong = two penalties`,
+    ]}
+  />
+);
+
+const magicDuelGame = (
+  <NormalDialogue
+    isGlobal={true}
+    header={"MAGIC DUEL"}
+    text={[
+      'Capax Infiniti" counters "Nox Cruenta", "Nox Cruenta" counters "Undam Mortis", and "Undam Mortis" counters "Capax Infiniti"',
+      "Capax Infiniti: infinity",
+      "Nox Cruenta: zig zag",
+      "Undam Mortis: swirl",
+      `Everyone pair up and duel each other. Best out of three wins each round.`,
+      // When there are 4 left, we judge them. If one spell wins against another, if they didn't have enough passion, consider it a tie
+      // If both did the same thing, both with passion, can choose the faster one
+      "When down to top 4, the audience will judge the winner based on every part of the spell. Ties will be broken by deciding who has the most spirit",
+      "Cheating: You can try to cheat to add an extra round if you lose. Take 4 penalties if you fail.",
+      rules,
+    ]}
+  />
+);
+
+export const cheatingRulesList = [
+  `Take a penalty to try and cheat.`,
+  `Roll a dice. If you roll {3, 4, 5, 6} you cheat successfully. If you roll {1, 2}, you are caught!`,
+  `If you fail to cheat take two more penalties and the cheating penalty.`,
+];
+
+const cheatingRules = (
+  <NormalDialogue
+    isGlobal={true}
+    header={"HOW TO CHEAT"}
+    text={cheatingRulesList}
   />
 );
 
@@ -189,834 +236,907 @@ const dialogue2024 = [
   <NormalDialogue
     text="Halloween 2025 >:)"
     image={firstImg}
-    answers={["tombstone"]}
+    answers={["witches"]}
     isGlobal={true}
   />,
   <NormalDialogue
     text={[
-      "With Halloween night only a few weeks away, creatures of the night are busy preparing for its arrival.",
-      "In an ordinary graveyard like any other, a lonestome grave digger is busy digging graves for the lost souls that will soon arrive...",
+      `Welcome new students! I am Headmaster ${headmasterName} We're so happy to have you here in our school. With Halloween just around the corner we've been in need of some fresh blood.`,
+      "You see, this year our school has been bestowed the honour of hosting this year's Magic Showcase.",
     ]}
     audio={introMusic}
-    image={cemteryImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Another day... another empty grave to fill... *mumble mumble*"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Well, hello there! Welcome to my graveyard, I hope you'll choose to-"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Ah. You're alive. Then have you perhaps come to reserve your future tombstone?"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Oh you're here for the party... Well, this is a little awkward. You see, the party is actually for lost souls, and yours seem pretty at home in your body so..."
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Though I suppose you could be future residents *mumble mumble*"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Tell ya what. If you help me get things ready, you can join in on the fun! Do we got a deal?"
-    image={graveDiggerImg}
-    answers={[
-      "yes",
-      "of course",
-      "i guess",
-      "sure",
-      "okay",
-      "ok",
-      "k",
-      "kk",
-      "yeah",
-      "ya",
-      "ye",
-      "deal",
-      "We have a deal",
-      "sounds good",
-    ]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Good on ya!"
-    image={graveDiggerImg}
-    answers={[]}
-    audio={graveMusic}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="The name's Mort, it'll be a pleasure working with ya, I'm sure"
-    image={graveDiggerImg}
-    answers={[]}
-    audio={graveMusic}
-    isGlobal={true}
-  />,
-  // DCDC lost humans, wayward humans?
-  <NormalDialogue
-    text="So you see, this here's a party for lost souls, real ones, not just lost humans. We wanna thank em for all they do for us an' try to show em that our graveyard is a nice place to take a rest. Every graveyard does the same thing around Halloween."
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="I've dug some new comfy graves, but we need some tombstones to go with them."
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  tombstoneRules,
-  <NormalDialogue
-    text="Hm. Those sure are some... interesting tombstones. Well you did your best."
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="You know, the corpses that live here are supposed to help, but they've been keeping to themselves recently... I'm sure once the music gets pumping, they'll come out! I hope... *mumble mumble*"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="You know what?! Let's wake 'em up! I'm not letting em get away with snoozing at the most important time of the year!"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  graveDiggingRules,
-  <NormalDialogue
-    text="The graves are empty... they all left!"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="boo hoo hoo... my graveyard is a failure! Why did they leave meeeee?! Are the tombstones not shiny enough? Graves not deep enough?!"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Hold on a tic! Ghosts can't move their own bodies? How did they leave?!"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="There's gotta be some corpses around here somewhere... I need you lot to go find them!"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  corpseFindingRules,
-  <NormalDialogue
-    text="I knew there were some left! Oi! Wake up!"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="*yawn* What's all the ruckus?"
-    image={tiredCorpseImage}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Halloween is soon! I need you lot to pull your weight in gettin' things ready!"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="You're not pulling one over me again! Lost souls might help the other souls keep their plots clean, but I live in an unmarked grave! Why should I care about them when my plots overrun by weeds and trash!"
-    image={tiredCorpseImage}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="..."
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Er, my mistake. Would you care for one of these tombs?"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Those are tombs?"
-    image={tiredCorpseImage}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Ahem. Never mind. Before you go back to sleep... you got any idea where everyone else is...?"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="The other corpses? They're in the graveyard next door."
-    image={tiredCorpseImage}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="..."
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="They really did abandon me!"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Don't be silly. They were all taken by some lost souls! We corpses can't move ourselves!"
-    image={tiredCorpseImage}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Oh. Right! Well we gotta get over there and bring em' back!"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="You do that. I'm going back to sleep. zzzzzzzZZZZZzzzzzz..."
-    image={tiredCorpseImage}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="No time to waste! Let's go get em!"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="What's this other graveyard called anyways?!"
-    image={graveDiggerImg}
-    answers={["Deadend Cemetery"]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="I've met the grave digger over there. He was a lil greedy but never struck me as the thieving type... You think you know a guy!"
-    image={graveDiggerImg}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="We oughta do some investigatin' before we go over there. Better send some spies!"
-    image={graveDiggerImg}
-    isGlobal={true}
-  />,
-  summonCrowGame,
-  <NormalDialogue
-    text="What do the crows say? Hm... I see."
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="They got some crazy security over there! Electric fence and all. Well, I reckon we better fight fire with fire!"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="I don't like havin' to call em up so close to Halloween but we got no choice! We gotta get help from the lost souls!"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="To call em' up, we need a sacrifice. Everybody take 3 penalties."
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <GhostDialogue
-    text="How can we be... how can we be... of service?"
-    audio={ghostMusic}
-    image={lostSoulsImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="That cemetery over there's gone and stolen all our corpses! We need your help gettin' em back"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <GhostDialogue
-    text="................"
-    image={lostSoulsImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <GhostDialogue
-    text="some lost souls have gone to the cemetery..."
-    image={lostSoulsImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <GhostDialogue
-    text="those lost souls... they come back... different... changed... wrong..."
-    image={lostSoulsImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <GhostDialogue
-    text="we cannot go... we will not go..."
-    image={lostSoulsImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Well aint that fantastic! What're we supposed to do then?"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Hold on... I'm bound to this graveyard so I can't leave... but YOU lot can go anywhere!"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="If it weren't for that darned electric fence!"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <GhostDialogue
-    text="we know a way... we know a secret..."
-    image={lostSoulsImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <GhostDialogue
-    text="*whisper whisper*"
-    image={lostSoulsImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Hm. A potion eh? That should do the trick! So how do we make this thing?"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <GhostDialogue
-    text="Answer our riddles... and the potion... will be revealed"
-    image={lostSoulsImg}
-    answers={[]}
-    isGlobal={true}
-    audio={null}
-  />,
-  <PotionRules />,
-  <NormalDialogue
-    text="Did ya drink the potion? If not, ya better hurry up and do it! (write done when everyone has drank the potion)"
-    image={graveDiggerImg}
-    answers={["done"]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="It should a lil while to take effect. Take a break for the time bein'."
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <TimerGame />,
-  <NormalDialogue
-    text="This potion will allow your soul to leave your body to secretly infiltrate the other cemetery."
-    audio={witch2Music}
-    globalScene="intermission"
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-    resetFullScreen
-  />,
-  <NormalDialogue
-    text="In other words, it's poison."
-    image={graveDiggerImg}
+    image={headmaster}
     answers={[]}
     isGlobal={true}
   />,
   <NormalDialogue
     text={[
-      "Don' get yer panties in a twist! These here souls'll enter yer bodies to keep em' warm. You just gotta be quick about it or they'll snatch em fer good.",
+      `Only our top students will have the priviledge of participating in the showcase, so you'd best study hard!`,
+      `The winning school will be awarded the Staff of ${staffName}, a powerful artifact rivaled only by my amulet. With its power, the school will double its potato yield! Among other things...`,
     ]}
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="The potion made you poltergeists, so yer not tied to yer bodies and can move stuff around."
-    image={graveDiggerImg}
+    image={headmaster}
     answers={[]}
     isGlobal={true}
   />,
   <NormalDialogue
     text={[
-      "But lookin at you lot... yer arms n' legs haven't manifested yet. Yer like lil baby ghosts.",
-      "You still have yer mouths at least. That'll have to do.",
+      "You can find your report card on the wall. The best students will be rewarded and the worst... well, just do your best and you won't have to find out.",
+      "Your host will help me grade, but I may need one of you to step up as well.",
     ]}
-    image={graveDiggerImg}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Hm? You want to know where the other students are? They're preparing and studying for the showcase of course!"
+    image={headmaster}
     answers={[]}
     isGlobal={true}
   />,
+  <NormalDialogue
+    text="Now before you are officially enrolled, every witch/mage/wizards needs two things! First is a wand!"
+    image={headmaster}
+    answers={[]}
+    isGlobal={true}
+  />,
+  wandMakingRules,
+  <NormalDialogue
+    text="I can already tell who the good students are..."
+    image={headmaster}
+    answers={[]}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Next! You will summon your familiars! I just need to find the scriptures... hold on a moment..."
+    image={headmaster}
+    answers={[]}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Psst... hey new students! Before you guys fail all your classes, you should know something."
+    image={cheaterWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Now that you have your wands, you can use chaos magic to cheat! If the deities of chaos are in your favour, you'll gain an advantage!"
+    image={cheaterWitch}
+    isGlobal={true}
+  />,
+  cheatingRules,
+  <NormalDialogue
+    image={cheaterWitch}
+    text="Good luck! You'll need it..."
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Found them! Now get to it!"
+    image={headmaster}
+    answers={[]}
+    isGlobal={true}
+  />,
+  familiarSummoningRules,
   <NormalDialogue
     text={[
-      "As ghosts, you should be able to communicate telepathically.",
-      "Might as well give it a try.",
+      `You are now officially enrolled! Time to get to your first class! I will teleport you there.`,
+      `(When your host is ready, write "Teleport" to continue)`,
     ]}
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  telepathyGame,
-  <NormalDialogue
-    text={["Perhaps that skill takes time..."]}
-    image={graveDiggerImg}
-    answers={[]}
+    image={headmaster}
+    answers={["Teleport"]}
     isGlobal={true}
   />,
   <NormalDialogue
-    text={["Best be on yer way. We'll keep yer bodies safe n' sound."]}
-    image={graveDiggerImg}
+    text="Welcome students to your necromancy class... I will show you the art of communing with and controlling the dead."
+    image={necromancer}
     answers={[]}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="First, you must learn summoning. Everyone gather around the gate to the world of lost souls."
+    image={necromancer}
+    isGlobal={true}
+  />,
+  summonSoulsRules,
+  <NormalDialogue
+    text="Breathe life into the souls to bring them to our plane."
+    image={necromancer}
+    isGlobal={true}
+  />,
+  ghostCreationRules,
+  <GhostDialogue
+    text="Hellloooooo????"
+    image={lostSoulsImg}
+    answers={[]}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Now you must form a connection with the spirit."
+    image={necromancer}
+    isGlobal={true}
+  />,
+  ghostConnectionRules,
+  <NormalDialogue
+    text="Now you are bound to the spirits. In your time of need, they may come to your aid..."
+    image={necromancer}
     isGlobal={true}
   />,
   <GhostDialogue
-    text={"Think I can do a flip?"}
-    image={Sammy}
+    text={["where is Prudy?", "our friend Prudy?", "our enemy Prudy?"]}
+    image={lostSoulsImg}
     answers={[]}
     isGlobal={true}
   />,
   <NormalDialogue
-    text={["*ahem* Off you go!"]}
-    image={graveDiggerImg}
-    answers={[]}
+    text="...sometimes ghosts speak in riddles..."
+    image={necromancer}
     isGlobal={true}
   />,
   <NormalDialogue
-    text={["Write 'Next' when you're in front of the other cemetery"]}
+    text={[
+      "When you are ready, I will teleport you to your next class",
+      'Write "Next" when your host is ready',
+    ]}
+    image={necromancer}
+    isGlobal={true}
     answers={["Next"]}
-    isGlobal={true}
-  />,
-  rescueCorpsesGame,
-  <NormalDialogue
-    text={[
-      "Bring the corpses back to the cemetery. Write Next when you've returned.",
-    ]}
-    answers={["Next"]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={["The corpses! You brought em' back!"]}
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  // TODO - allow ghosts?
-  <NormalDialogue
-    text={[
-      "I suppose you want yer bodies back (take three penalties to become human again)",
-      //'If you choose, you can remain a ghost, but you must take a penalty for every game. You can make one other person take the penalty'
-    ]}
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={["Broken bones? I'm sure yer bones have always been broken."]}
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={["Boss! We're finally home!"]}
-    image={homeCorpseImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={["Welcome home, harold."]}
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={[
-      "It was awful! He told us he'd bring us home if we worked for him, but he worked us to the bone! He made us clean and dig graves all day. We didn't even get to sleep in them! He just wanted to attract lost souls. And whenever one would show up, he'd eat them! It was horrifying.",
-    ]}
-    image={homeCorpseImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={["Yeah, yeah, it's all over now"]}
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={["Wait a tick. He was eating lost souls?"]}
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={["Yeah! He'd just go 'SHOOP' and they were gone!"]}
-    image={homeCorpseImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={[
-      "Sometimes he'd spit them out after, but they were always different after that.",
-    ]}
-    image={homeCorpseImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={[
-      "I heard of lost souls eating other lost souls. Never heard of gravekeepers doin it. You sure that's what you saw?",
-    ]}
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={["Everything he says is true."]}
-    image={otherCorpseImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={["Who're you? You're not from this cemetery!"]}
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={[
-      "I snuck my corpse in with yours while they were getting rescued. I had to escape the cemetery, before I got absorbed too.",
-    ]}
-    image={otherCorpseImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={["Absorbed? What are you going on about?"]}
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={[
-      "There's something wrong with my cemetery's gravekeeper, Rattler. One day he absorbed a lost soul and he's been different ever since. He works day and night trying to lure in lost souls so he can absorb them. I thought I was safe, but I saw him absorb a regular ghost the other day so I knew I had to escape.",
-    ]}
-    image={otherCorpseImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={[
-      "Rattler's always been a lil obsessed with attracting lost souls, but he'd never hurt his own residents. Something strange is afoot.",
-    ]}
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={[
-      "You lot got any idea what's goin' on?",
-      "(Hint: If you don't know, try talking to Mort through the menu. The first to guess the correct answer gets 5 points)",
-    ]}
-    image={graveDiggerImg}
-    answerPoints={5}
-    answers={[
-      "Corruted souls",
-      "Corrupted soul",
-      "Corrupt soul",
-      "Corrupt souls",
-    ]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={["Corrupted souls? I reckon that might explain it!"]}
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-
-  <NormalDialogue
-    text={[
-      `So ${otherGraveDiggerName} didn't absorb the soul, the corrupted soul possessed him!`,
-    ]}
-    image={otherCorpseImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={[
-      "With the number of souls he's absorbed, there's no telling how strong he is now",
-      "We gotta exorcise him before he reaches 1000 souls, or he'll start absorbing souls from living humans!",
-    ]}
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
   />,
   <GhostDialogue
-    text={[
-      "Is there another way?",
-      "Many of our friends have been absorbed.",
-      "We don't want to lose them",
-    ]}
+    text={["she has left us for alive", "she will leave you for dead"]}
     image={lostSoulsImg}
     answers={[]}
     isGlobal={true}
   />,
   <NormalDialogue
-    text={["There is a way... but it's much more dangerous."]}
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <GhostDialogue text="🥺" image={lostSoulsImg} answers={[]} isGlobal={true} />,
-  <NormalDialogue
-    text={["Don' look at me with those big ol' eyes, we'll do it."]}
-    image={graveDiggerImg}
-    answers={[]}
+    text="Welcome my dears to shapeshifting class!"
+    image={shapeshifting_witch}
     isGlobal={true}
   />,
   <NormalDialogue
-    text={[
-      "We gotta do a ritual to summon and bind him. Then we can cut out the souls he ate.",
-    ]}
-    image={graveDiggerImg}
-    answers={[]}
+    text="Oh! Some of you already seem to be experts of the craft! I think you deserve some bonus points!"
+    image={shapeshifting_witch}
+    isGlobal={true}
+  />,
+  shapeshiftingJudging,
+  <NormalDialogue
+    text="Not bad... but there are always new tricks you can learn!"
+    image={shapeshifting_witch}
     isGlobal={true}
   />,
   <NormalDialogue
-    text={[
-      "We need a bunch of ingredients for the ritual. I got most of them here but I'll need you to fetch some.",
-    ]}
-    image={graveDiggerImg}
-    answers={[]}
+    text="Why don't you decide what you should shift into?"
+    image={shapeshifting_witch}
     isGlobal={true}
   />,
+  shapeshiftingPractice,
   <NormalDialogue
-    text={[
-      "We need bones from a fresh corpse. I'm sure the morgue'll have a body.",
-    ]}
-    image={graveDiggerImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  dissectionGame,
-  <RitualRules />, // TODO - global??
-  <NormalDialogue
-    text={[
-      "Cause of the potion, you lot still got some ghostly powers, but this also means it's easy for Rattler to absorb your souls.",
-      "You can channel ectoplasm with these here devices to bind him and extract the souls.",
-      "I'll show you where to aim the ectoplasm. You don't got infinite ectoplasm, so you might hav'ta switch out partway through.",
-    ]}
-    image={graveDiggerImg}
-    answers={[]}
+    text="Well done, everyone! Though those were certainly some interesting choices..."
+    image={shapeshifting_witch}
     isGlobal={true}
   />,
   <NormalDialogue
     text={[
-      "When everyone has their weapons and is ready to fight, extinguish the incense in the ritual bowl and insert the secret code",
+      "I will teleport you to your next class when you're ready!",
+      'Write "Next" to go to your next class',
     ]}
-    globalScene="bossBattle"
-    answers={["HalloweenTime"]}
+    image={shapeshifting_witch}
+    isGlobal={true}
+    answers={["Next"]}
+  />,
+  <NormalDialogue
+    text="Hm... the next ingredient is... no, it mustn't be that... mustn't be..."
+    image={potionsWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Oh, class time already? Well, you already know what to do, I left the instructions on the potions table if you forgot..."
+    image={potionsWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue text="Your teacher doesn't seem to notice that you're not her regular students... well I'm sure you can figure it out!" />,
+  potionMaking,
+  <NormalDialogue
+    text="Hm? You're done? Alright, then off to your next class..."
+    image={potionsWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue text="..." image={potionsWitch} isGlobal={true} />,
+  <NormalDialogue
+    text="You can't teleport on your own? Just drink the teleportation potion!"
+    image={potionsWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text='Everyone take 3 penalties. When your host is ready, write "Next"'
+    isGlobal={true}
+    answers={["Next"]}
+  />,
+  <NormalDialogue
+    text="Welcome to flying class!"
+    image={broomWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Today, we'll be having a race!"
+    image={broomWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Your next class is... oh dear."
+    image={broomWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Best to recharge before your next class! You'll need your wits for that old witch's class!"
+    image={broomWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text='Take a break if you need. When everyone is ready, write "Next"'
+    isGlobal={true}
+    answers={["Next"]}
+  />,
+  <NormalDialogue
+    text="You are late. As was foretold..."
+    image={divinationWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Divination class is not like those frivolous other classes. If you do not work hard, you will be sent straight to the dungeon!"
+    image={divinationWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Everyone grab a sheet of paper and find a place to write. Make sure you can see no one else's page. I will NOT tolerate cheating!"
+    image={divinationWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue text="Seriously, don't cheat." isGlobal={true} />,
+  <NormalDialogue
+    text="I will now beam an image into your brains."
+    image={divinationWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue text="..." image={divinationWitch} isGlobal={true} />,
+  <NormalDialogue
+    text="The image has been sent. If you did not receive it, you are a failure and will be sent to the dungeon."
+    image={divinationWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Psst... if you didn't get the image, don't worry! She always gives new students the same image: the headless horseman"
+    image={cheaterWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Now, transfer the beamed image onto the page in front of you. Make sure not to sign your name or imprint your identity in any way on these pages."
+    image={divinationWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="You have three minutes to draw. When you are done, anonymously hand in your drawings to the host."
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Now, comes the real test of your divination skills!"
+    image={divinationWitch}
+    isGlobal={true}
+  />,
+  divinationGame,
+  <NormalDialogue
+    text="What a pitiful excuse for divination... I would send you to the dungeons but unfortunately I foresee a great calamity if I do... Alas."
+    image={divinationWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Now be off with you!"
+    image={divinationWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={`Write "Next" when you're ready for your next class`}
+    isGlobal={true}
+    answers={["Next"]}
+  />,
+  <NormalDialogue
+    text="Welcome to your offensive spells class! Now that you know the basics of magic, it's time you learned how to fight!"
+    image={duelWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="To cast a spell, there are three things to focus on when casting a spell; the incantation, the form, and the spirit."
+    image={duelWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      'The fist spell is "Capax Infiniti". That is the incantation.', // capable of infinity
+      "The form of the spell is an infinity symbol. Start in the middle of the infinity, trace it out with you wand, and finish by thrusting it forward",
+      "If you want the spell to work, you must put energy into it, otherwise it will fail.",
+      "Let us practice all together.",
+    ]}
+    image={duelWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      'The second spell is "Nox Cruenta".', // bloody night
+      "The form of the spell is a zig zag from top to bottom, ending with a thrust forward.",
+      "Let us practice all together",
+    ]}
+    image={duelWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      'The third spell is "Undam Mortis"', // wave of death
+      "The form of the spell is a spiral from the outside in, ending with a thrust forward.",
+      "Let us practice all together",
+    ]}
+    image={duelWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["Now that you know the spells, it's time to duel!"]}
+    image={duelWitch}
+    isGlobal={true}
+  />,
+  magicDuelGame,
+  <NormalDialogue
+    text={["Marvelous! You are all ready now."]}
+    image={duelWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={['If you feel ready, write "Ready"']} // TODO - maybe I'll make this a hidden code
+    isGlobal={true}
+    answers={["Ready"]}
+  />,
+  <NormalDialogue
+    text={["Welcome back students, how have your classes been so far?"]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      "Now that you are fully trained, you are ready to participate in the Magic Showcase! Just in time, too, because it is about to begin!",
+    ]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["THE GREAT COUNCIL OF MAGICAL MODERATORS HAVE ARRIVED"]}
+    image={wizard}
+    audio={wizardArrival}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `I am the Wizard Wysiwyg! And I am the Guardian of the Staff of ${staffName} until the Wizard is decided!`,
+    ]} // google translate of Awesome
+    image={wizard}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      "While I was introducing myself, it seems that the rest of the schools have arrived! Everyone gather the students who will be participating here!",
+    ]}
+    image={wizard}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={[`We're ready!`]} image={headmaster} isGlobal={true} />,
+  <NormalDialogue
+    text={["...these are your competing students? Where are the rest of them?"]}
+    image={wizard}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `Ahem, yes, well... these students are our top students! All other students are studying!`,
+    ]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["The other students aren't going to watch the competition?"]}
+    image={wizard}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`They have to study!`]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["Hm... if you say so. I will check on the other schools."]}
+    image={wizard}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={[`Phew...`]} image={headmaster} isGlobal={true} />,
+  <NormalDialogue
+    text={[
+      `What's that look for? Aren't you honoured to be chosen to compete?`,
+    ]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Perhaps the students deserve an explanation...`]}
+    image={shapeshifting_witch}
+    isGlobal={true}
+    //audio={witches2}
+  />,
+  <NormalDialogue
+    text={[`*sigh* I suppose you're right...`]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      "The truth is, someone has cursed our students. All of their energy is being syphoned elsewhere, leaving them all in a deep slumber. It is an advanced curse that not even our expert on dark magic can lift.",
+      "With the power of my amulet and the staff, we might be able to break the curse through brute force magic.",
+      `If you hadn't passed your classes, we would have had to forfeit the competition and try to break the curse another way.`,
+    ]}
+    image={headmaster}
+    isGlobal={true}
+    audio={halloweenGroove}
+  />,
+  <NormalDialogue
+    text={[
+      "Since you're all here, best make the most of it!",
+      `Now, where is the headmaster of ${otherSchoolName}... we have some beef we need to settle...`,
+    ]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={["Here I am!"]} image={normal_witch} isGlobal={true} />,
+  <NormalDialogue
+    text={["Elise? What are you doing here?"]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `Ah, you must have enrolled at ${otherSchoolName} after being expelled.`,
+      `I suppose it's good to see you thriving at your new school, even though it's second rate compared to ours.`,
+      `Now where is your headmaster?`,
+    ]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["Actually, I am the headmaster now."]}
+    image={normal_witch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Enough jokes. I'm looking for Headmaster Gertrude.`]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["Look at me.", "Look at me!", "I am the headmaster now."]}
+    image={happy_witch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Where is Gertrude?`]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      "She's taking a nap. In fact, all the other teachers were so tired that I had to step up and take on this role.",
+    ]}
+    image={happy_eyes_witch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`...Elise, what did you do?`]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`That's not me...`]}
+    image={cheaterWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Who said that?`]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `My body is possessed by a witch who wants the staff!`,
+      `She's the one who cursed the students. She wanted to make sure our school lost so that she would win.`,
+    ]}
+    image={cheaterWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `I've been floating around as a spirit trying to help you guys cheat to make sure you could win the tournament and get the staff!`,
+    ]}
+    image={cheaterWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `You decide that the best course of action was training these rookie witches to win a tournament against the best witches of the other schools to try to win the staff?`,
+      "Instead of letting us know who was responsible so we could deal with it properly?",
+    ]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Um... yeah?`]}
+    image={cheaterWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["Unbelievable... there's a reason why you were expelled..."]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      "I believe she was expelled for trying to sacrifice other students to summon a demon.",
+    ]}
+    image={broomWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["Well, that too."]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `I wasn't actually gonna kill them... just wanted to scare them a little...`,
+      "But you expelled me before I could explain anything!",
+    ]}
+    image={cheaterWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      "Someone go fetch the Council of Moderators so we can figure out what to do.",
+    ]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={["On it!"]} image={broomWitch} isGlobal={true} />,
+  <NormalDialogue
+    text={["Now, explain exactly what happened."]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      "I was packing up my stuff after I got expelled, but then a ghost told me they could help me.",
+      "They said they were wrongly expelled like me, for the same reason, and they could help me get revenge if I let them borrow my body for a bit.",
+      "We did the switch then they cast the sleeping curse, which I thought was a really funny prank, but then they refused to lift the curse or give me my body back!",
+    ]}
+    image={cheaterWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      "We've never had a student that good at curses... Unless... It couldn't be...",
+    ]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["Why hasn't the showcase started? Shouldn't we begin the duels?"]}
+    image={happy_witch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      "We are having... technical difficulties.",
+      "Most of our student body has been cursed. We're seeing if anyone can lift it.",
+    ]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["It's too bad our students won't be able to go against your best."]}
+    image={happy_witch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      "Yes... it's a shame our old teacher of dark magic isn't still around. I'm certain she would know how to break the curse.",
+    ]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["So now you miss her?"]}
+    image={normal_witch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      "You seem to be familiar with who I'm talking about. I was under the impression this was before your time.",
+    ]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      "I only heard the stories. How you killed a fellow teacher because you disagreed with her teaching methods.",
+    ]}
+    image={angry_witch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["I heard that there's an issue? What's going on?"]}
+    image={wizard}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `A malevolent spirit has possessed a student and taken over ${otherSchoolName} to get the staff.`,
+    ]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["That's ridiculous. She's just afraid of losing to me."]}
+    image={happy_witch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      "Well, you do seem rather young to be a headmaster...",
+      "I suppose we'll have to postpone the showcase until we get this figured out.",
+    ]}
+    image={wizard}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["NO!"]}
+    image={angry_witch}
+    isGlobal={true}
+    audio={newHalloween}
+  />,
+  <NormalDialogue text={["OOF"]} image={wizard} isGlobal={true} />,
+  <NormalDialogue
+    text={[`She has the staff!`]}
+    image={broomWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Come here, my dear ${headmasterName}`]}
+    image={possessed_witch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`We can't let her get my amulet! I'll teleport us somewhere safe!`]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`This should buy us some times...`]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Did you really kill her?`]}
+    image={cheaterWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `Not exactly... She had been using dark magic to get stronger by sacrificing misbehaving students.`,
+      `I sealed away the part of her corrupted by dark magic in my amulet, but by then she had been entirely consumed by darkness and there was nothing left.`,
+      "Or so we thought... it seems a shred of her remained in spirit form.",
+    ]}
+    image={headmaster}
+    audio={halloweenHex}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `It's a good thing you clean out your amulet every few months! She has no way of getting her power back!`,
+    ]}
+    image={broomWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={[`...`]} image={headmaster} isGlobal={true} />,
+  <NormalDialogue
+    text={[`You cleaned it out right?`]}
+    image={broomWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={[`...`]} image={headmaster} isGlobal={true} />,
+  <NormalDialogue
+    text={[`When was the last time you cleaned it out?`]}
+    image={broomWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Perhaps a few centuries ago... I've just been so busy...`]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={[`bro...`]} image={broomWitchScared} isGlobal={true} />,
+  <NormalDialogue
+    text={[
+      `Anyways! We need to break the contract you made with her so she'll lose her physical form and her power!`,
+    ]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`But it's unbreakable...`]}
+    image={cheaterWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`You cannot hide from me!`]}
+    image={possessed_witch}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={[`Quick!`]} image={headmaster} isGlobal={true} />,
+  <NormalDialogue
+    text={[`Okay, here it is...`]}
+    image={cheaterWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`...this is the worst contract I've ever seen. I'll break it now.`]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Don't even try!`]}
+    image={angry_witch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Ack! My amulet! It's cracked!`]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Hey I have my body back!`]}
+    image={happy_witch}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={[`...`]} image={prudence} isGlobal={true} />,
+  <NormalDialogue
+    text={[
+      `I don't need your body anymore, I can feel my power slowly coming back to me!`,
+    ]}
+    image={prudence}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `How dare you lock me away? I was going to be the greatest witch in all of history!`,
+    ]}
+    image={prudence}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`No great witch would murder their students!`]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`I only sacrificed the ones who deserved it.`]}
+    image={prudence}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`You once sent a student to "detention" for sneezing in your class`]}
+    image={broomWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`As I said, the ones who deserved it.`]}
+    image={prudence}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Now, to destroy your amulet, once and for all!`]}
+    image={prudence}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `Prudence, stop! If you destroy the amulet, all the other evil creatures I sealed away will escape too!`,
+    ]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `Serves you right! I will regain my power and watch as the world burns because of your mistakes!`,
+    ]}
+    image={prudence}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`She's gone mad...`]}
+    image={broomWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `Teachers! Gather around the amulet, we'll need all our power combined to seal it!`,
+    ]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `You! Rookie students! Defend us against Prudence's attacks and banish the creatures trying to get out!`,
+      "The fate of the world depends on you!",
+    ]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={[`No pressure`]} image={broomWitch} isGlobal={true} />,
+  <NormalDialogue
+    text={[
+      "Attach a long distance attack charm to your wands. Make sure to have the spirits you summoned near you so they can defend you.",
+      "Capax Infiniti: infinity - defeats creatures of the dead",
+      "Nox Cruenta: zig zag - defeats creatures peering in",
+      "Undam Mortis: swirl - defeats flames of darkness",
+      "Good luck!",
+    ]}
+    stopAudio
+    answers={["spellattack"]}
+  />,
+  // fight goes here
+  <NormalDialogue
+    text={[`YOU WILL REGRET THIS`]}
+    image={prudence}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["Good riddance."]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["Can I come back to school now?"]}
+    image={normal_witch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      "After you cursed the entire student body and almost caused the end of the world?",
+    ]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={["Ya"]} image={normal_witch} isGlobal={true} />,
+  <NormalDialogue text={["Sure why not"]} image={headmaster} isGlobal={true} />,
+  <NormalDialogue text={["Yippee!"]} image={happy_witch} isGlobal={true} />,
+  <NormalDialogue text={[""]} image={broomWitchExasperated} isGlobal={true} />,
+  <NormalDialogue
+    text={["CLEAN OUT YOUR AMULET"]}
+    image={broomWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["Yes, yes, I'll do it soon."]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["But more importantly..."]}
+    image={headmaster}
     isGlobal={true}
   />,
   <BossBattle />,
-  <NormalDialogue
-    text="Uugghhh..."
-    image={rattlerImg}
-    isGlobal={true}
-    audio={endMusic}
-    resetFullScreen
-  />,
-  <NormalDialogue
-    text="Rattler? Is that you?"
-    image={graveDiggerImg}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Hm? Mort?! What's going on here? Last thing I remember I was making a deal with a lost soul..."
-    image={rattlerImg}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="What have I told you about accepting shady deals?"
-    image={graveDiggerImg}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="It seemed like a good idea at the time..."
-    image={rattlerImg}
-    isGlobal={true}
-  />,
-  <GhostDialogue
-    text="Where am I... who am I...?"
-    image={corruptSoulImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue text="..." image={graveDiggerImg} isGlobal={true} />,
-  <NormalDialogue
-    text="Yer Mort junior. Yer a resident of this graveyard. You seem t'ave lost yer memory, and your skeleton. But those bones in that there bowl look like they might fit you."
-    image={graveDiggerImg}
-    isGlobal={true}
-  />,
-  <GhostDialogue
-    text="I am...?"
-    image={corruptSoulImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Yes. I am. Of course."
-    image={corruptSoulImg}
-    isGlobal={true}
-  />,
-  <GhostDialogue
-    text="We are free..... we are alive.... sort of..."
-    image={lostSoulsImg}
-    answers={[]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Well the graveyard's a mess, but we all made it out undead."
-    image={graveDiggerImg}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="I wanna thank you all. It ain't much, but I hope you'll accept this as thanks."
-    image={graveDiggerImg}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="When you've gotten your reward, write 'Next'"
-    answers={["Next"]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="It's a little early, but I reckon we deserve ourselves a break."
-    image={graveDiggerImg}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="I know a made a huge mess out of things, but let me help set everything up. Let's party!"
-    image={rattlerImg}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Happy Halloween!"
-    image={graveDiggerImg}
-    isGlobal={true}
-    audio={raveMusic}
-  />,
   <NormalDialogue text="HAPPY HALLOWEEN!" image={endCard} isGlobal={true} />,
 ];
 
-// -1 point every place you get string anywhere but the paper
-
-// the page says something like,
-// Mix up groups again
-// "Gourd(s)", "Treat(s)", "Trick(s)", "Bats", "Spider", "Cats"
-const breakCurse1 = (
-  <NormalDialogue
-    header={"BREAK THE CURSE - PART 1"}
-    isGlobal
-    text={[
-      `Using the wands and a long exposure photograph where each person draws a pumpkin. (Try to fit a few people in each picture)`,
-      `In one photograph, write all together "Free Gourds"`,
-      //, write: Free Gourd(s) or Free Pumpkin (depending on how many people there are)`,
-      `Look at the pictures and vote on the best drawing. The winner gets 3 ${magicPower}, second place gets 2, third gets 1.`,
-    ]}
-  />
-);
-
-// maybe just add timer to normal dialogue?
-const breakCurse2 = (
-  <NormalDialogue
-    header={"BREAK THE CURSE - PART 2"}
-    isGlobal
-    text={[
-      `The Pumpkin's souls have been freed! But they need a new vessel before it's too late!`,
-      `Everyone grab a bell pepper and a knife. When everyone is ready, you have 5 minutes to carve out the pepper with a face.`,
-      `Each take a cursed plate, and draw the symbol on it. Put the pepper on top.`,
-      `Vote on the best pumpkin, er, pepper. The winner gets 3 ${magicPower}, second place gets 2, third gets 1.`,
-    ]}
-  />
-);
-
-const finalFight = (
-  <NormalDialogue
-    header={`"Water" the Tree`}
-    text={[
-      `Take the pot of cursed soil from amongst the plants`,
-      `Saturate the middle of the soil with fermented toad blood`,
-      `Mix together 4 tsp of crystallized banshee tears and 1 tsp of ground tombstone, put them on top of the fermented blood.`,
-      `Set it all ablaze`,
-      `Wait for the growing roots to settle, then cut off a piece and grind it in a bowl with water`,
-      `On another plate, write the sealing symbol and place the ugliest carved pepper on top`,
-      `Remove the rest of the root and dig until you find the seed.`,
-    ]}
-  />
-);
-
-const stickerRules = `First place winner gets 4 ${magicPower}, second gets 3, third gets 2, fourth gets 1. In case of ties, both players get the same number`;
-
-const summoningRules = (
-  <NormalDialogue
-    header={"GHOST SUMMONING"}
-    audio={summoning}
-    text={[
-      `Sit in a circle around the board.`,
-      `Each team member must write down 5 words on the blank pieces and place them in a pile beside the board.`,
-      `One at a time, pick a word from the pile (don't show it to anyone)`,
-      `Hold the string at the halfway point over the board (The planchet must hover oven the board without touching it).`,
-      `Set a timer for one minute. By moving the planchet from letter to letter, the other teammembers must guess what the word is. Try to spell as many as you can.`,
-      `The person moving the planchet and the person who guess the word correctly both get a point. (You cannot guess a word that you wrote)`,
-      `Handicaps: Ghosts must hold the string from the top`,
-      stickerRules,
-    ]}
-  />
-);
-
-// TODO - all areas have same dialogue, depending on team, return different order (future task after Halloween2023)
+// TODO - all areas have same dialogue, depending on team, return different order (future task when needed)
 export const getDialogue = (team: string) => {
   return dialogue2024;
 };
