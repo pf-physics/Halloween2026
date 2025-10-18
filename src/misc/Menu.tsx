@@ -5,16 +5,12 @@ import MenuItem from "@mui/material/MenuItem";
 import {
   Button,
   createTheme,
-  FormControl,
-  InputLabel,
   Modal,
-  Select,
   SelectChangeEvent,
   Switch,
-  ThemeProvider,
 } from "@mui/material";
 import { useState } from "react";
-import { useAppSelector, useAppDispatch } from "../store/hooks";
+import { useAppSelector } from "../store/hooks";
 import { TeamChoice } from "./SharedComponents";
 import { useIncPoints } from "../hooks/pointsHooks";
 import { cheatingRulesList } from "../dialogue/dialogue-list";

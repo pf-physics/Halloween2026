@@ -1,5 +1,5 @@
 import "./dialogue.css";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { Button } from "@mui/material";
 import Dialogue from "./dialogue";
@@ -25,6 +25,7 @@ export type DialogueProps = {
   resetFullScreen?: boolean;
   answerPoints?: number;
   stopAudio?: boolean;
+  video_url?: string;
 };
 
 const NormalDialogue = ({
@@ -38,6 +39,7 @@ const NormalDialogue = ({
   header,
   answerPoints,
   stopAudio,
+  video_url,
 }: DialogueProps) => {
   const index = useAppSelector((state) => state.index.value);
   const playerIndex = useAppSelector((state) => state.playerIndex.value);
@@ -99,23 +101,33 @@ const NormalDialogue = ({
   };
 
   useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Enter") {
-        handleNext();
-      }
+    let pressed = false; // simple re-entrancy guard
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== "Enter") return;
+      // ignore if typing in inputs
+      if (
+        e.target instanceof HTMLInputElement ||
+        e.target instanceof HTMLTextAreaElement
+      )
+        return;
+      if (pressed) return; // stop rapid repeats
+      pressed = true;
+      e.preventDefault();
+      handleNext();
+      setTimeout(() => (pressed = false), 200);
     };
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    // Clean up on unmount or when `value` changes
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [playerIndex]);
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [handleNext]);
 
   return (
     <div>
       <Dialogue header={header} text={text} image={image} />
+      {video_url && (
+        <video src={video_url} controls width="100%">
+          Your browser does not support the video tag.
+        </video>
+      )}
       {answers.length > 0 && ansRequired && (
         <input
           value={ans}

@@ -1,16 +1,6 @@
 import NormalDialogue from "./templates/normal-dialogue";
 import introMusic from "../assets/audio/magic_halloween.mp3";
-import summoning from "../assets/audio/summoning.mp3";
 import firstImg from "../assets/imgs/cauldron_pumpkin.jpg";
-
-import graveMusic from "../assets/audio/Runescape_Halloween.mp3";
-
-import shinySkeleton from "../assets/imgs/skeleton_shiny_eyes.png";
-import sheetGhost from "../assets/imgs/sheet-ghost.jpg";
-
-import mort2 from "../assets/imgs/mort2.png";
-import rattler from "../assets/imgs/Rattler.png";
-import lil_ghost from "../assets/imgs/lil_ghost.png";
 import many_ghosts from "../assets/imgs/many_ghosts_freepik.jpg";
 
 import endCard from "../assets/imgs/Halloween_Cauldron.jpg";
@@ -20,12 +10,12 @@ import headmaster from "../assets/imgs/headmaster.png";
 import necromancer from "../assets/imgs/necromancer1.jpg";
 import cheaterWitch from "../assets/imgs/sus witch.png";
 import shapeshifting_witch from "../assets/imgs/shapeshifting_witch.jpg";
-import potionsWitch from "../assets/imgs/potions_witch.png";
+import potionsWitch from "../assets/imgs/potions_witch.jpg";
 import broomWitch from "../assets/imgs/broom_witch.png";
 import broomWitchScared from "../assets/imgs/broom_witch_scared.png";
 import broomWitchExasperated from "../assets/imgs/broom_witch_exasperated.png";
 import divinationWitch from "../assets/imgs/clairvoyance_witch.jpg";
-import duelWitch from "../assets/imgs/duel_witch.jpg";
+import duelWitch from "../assets/imgs/duel.jpg";
 import darkMage from "../assets/imgs/curse_witch2.png";
 
 import BossBattle from "./scenes/boss-battle";
@@ -45,14 +35,16 @@ import flabbergasted from "../assets/imgs/flabbergasted.gif";
 import possessed_witch from "../assets/imgs/possessed_3.png";
 import prudence from "../assets/imgs/prudence4.png";
 import wizard from "../assets/imgs/wizard.png";
-import witches2 from "../assets/audio/witches2.mp3";
-import newHalloween from "../assets/audio/New-Halloween-Theme.mp3";
+import wizard_party from "../assets/imgs/wizard_party.png";
 
+import newHalloween from "../assets/audio/New-Halloween-Theme.mp3";
 import halloweenGroove from "../assets/audio/Halloween-Groove.mp3";
 import halloweenHex from "../assets/audio/Halloween-Hex.mp3";
+import witchReturn from "../assets/audio/Halloween-2025_intense.mp3";
+import endMusic from "../assets/audio/runescape_party_dance.mp3";
 
-const schoolName = "Grexmurium"; // urbs murium = city of rats, grex murium = swarm of rats, vicus felium = village of cats, bat = vespertilio
-const otherSchoolName = "Iusculum"; // soup
+const schoolName = "Noxfelium"; // Nox = night Conventusmurium = rat meeting, convio = meeting urbs murium = city of rats, grex murium = swarm of rats, vicus felium = village of cats, bat = vespertilio
+const otherSchoolName = "Vespertilio"; // bat, soup
 const staffName = "Praeclarus";
 const headmasterName = "Mildred";
 
@@ -60,16 +52,7 @@ const headmasterName = "Mildred";
 export const graveDiggerImg = headmaster;
 const lostSoulsImg = many_ghosts;
 
-const CharmRules = [
-  "Coven Charm/Curse: In a group of 3, each roll a dice. If the average value is greater than 3, you can charm/curse someone",
-  "Wizard's Tower Charm/Curse: Everyone in the group rolls a dice. If someone rolls a 6, you can charm/curse someone, otherwise everyone must take 3 penalties.",
-  "Scientist's sacrifice: Take a shot to charm/curse someone",
-  "Skeleton's hand: Roll a dice. If the value is greater than 2, you can charm/curse someone, otherwise, you are cursed for the round.",
-  "Devil's wager: Roll a dice with someone from the other team. Whoever gets a lower value is cursed.",
-];
-
-const magicPower = "Halloween power";
-const rules = `1st place: 3 points, 2nd place, 2 points, 3rd place 1 point. Last place 3 penalties, 2nd to last 2 penalties, 3rd to last 1 penalty`;
+const rules = `1st: 3 points, 2nd: 2 points, 3rd: 1 point. Last place 3 penalties, 2nd to last 2 penalties, 3rd to last 1 penalty`;
 
 // TODO remove all audio I guess
 
@@ -78,11 +61,10 @@ const wandMakingRules = (
   <NormalDialogue
     isGlobal={true}
     header={"WAND MAKING"}
-    stopAudio={true}
     text={[
       `Everyone grab a base wand`,
       `Using the materials provided, alter your wand so that it is in tune with your magic (make it look cool)`,
-      `When everyone's wand is complete, each student will be given three pellets to vote on their favourite wand.`,
+      `When everyone's wand is complete, each student will be given three tokens to vote on their favourite wand.`,
       rules,
     ]}
   />
@@ -94,12 +76,11 @@ const familiarSummoningRules = (
     isGlobal={true}
     header={"FAMILIAR SUMMONING"}
     text={[
-      `Everyone split up into pairs/groups. Using your camera flashlight, draw a picture of the creature you want to summon.`,
+      `Everyone split up into pairs/groups. Using a summoning charm, draw a picture of the creature you want to summon. You have two tries.`,
       `Examples of what is accepted will be provided. If your desired animal is not on the list, exceptions can be made.`,
       `Bonus points will be awarded to those who go above and beyond.`,
-      `Three points for complex version, 1 point for simple version`,
       `Cheating: get one extra try. Failure to cheat: your first attempt is your only attempt`,
-      rules,
+      //rules,
     ]}
   />
 );
@@ -109,7 +90,7 @@ const summonSoulsRules = (
     isGlobal={true}
     header={"SUMMONING LOST SOULS"}
     text={[
-      `Attach a summoning charm to your wand. When everyone is ready, use the summoning charm to fish lost souls from the gate`,
+      `Attach a necromancy charm to your wand. When everyone is ready, use the charm to fish lost souls from the gate`,
       `When time is up, the student with the most souls, wins.`,
       `If necessary, split up into two groups.`,
       `Cheating: get extra time (start early). Failure to cheat: get less time (start late). 7 seconds`, // DCDCDC - too much?
@@ -135,7 +116,7 @@ const ghostConnectionRules = (
     isGlobal={true}
     header={"GHOST BONDING"}
     text={[
-      `Everyone take your ghost space out. When everyone is ready, use your wand to keep the ghost afloat. The person who keeps their ghost floating the longest, wins`,
+      `Everyone take your ghost and space out. When everyone is ready, use your wand to keep the ghost afloat. The person who keeps their ghost floating the longest, wins`,
       `If everyone survives for 2 minutes, additional rules will be added`,
       `If you break or spill anything in the room, automatically lose and take 10 penalties`,
       rules,
@@ -149,8 +130,8 @@ const shapeshiftingJudging = (
     header={"SHAPESHIFTING CONTEST"}
     text={[
       `Since everyone has already shapeshifted into something cool (costume), you can decide who gets the most points!`,
-      `Take three beads and vote for your top 3 favourite shapeshifters`,
-      `Top shapeshifter gets 4 points. 2nd and 3rd place get 3 points, 4th and 5th get 2 points. Everyone else who shapeshifted get 1 points. If you didn't shapeshift, get no points and take 3 penalties.`, // TODO - make sure this still makes sense!
+      `Take three tokens and vote for your top 3 favourite shapeshifters`,
+      `Top shapeshifter gets 4 points. 2nd and 3rd place get 3 points, 4th and 5th get 2 points. Everyone else who shapeshifted get 1 point. If you didn't shapeshift, get no points and take 3 penalties.`,
     ]}
   />
 );
@@ -164,6 +145,7 @@ const shapeshiftingPractice = (
       `One at a time, pick a paper and become (act out) what's written on the paper. Say the name of the person who wrote it beforehand so they know not to guess.`,
       `You get one minute to act out a maximum of two papers`,
       `Keep track of how many you guessed and how many you acted out to decide the winner of the challenge`,
+      `Cheating: get 15 seconds extra. Failure to cheat: lose 15 seconds.`,
       rules,
     ]}
   />
@@ -175,7 +157,7 @@ const potionMaking = (
     header={"POTION MAKING"}
     text={[
       `Time for a group project! Split into three groups. One group at a time, head to the potion making room and make a potion, following the instructions.`,
-      `The instructions may be vague but any experienced witch is very familiar with this potions, and knows which ingredients should be used, and would never use the poisoned ones by accident.`,
+      `The instructions may be vague but any experienced witch is very familiar with these ingredients and knows should ones should be used, and which ones are poisoned.`,
       `You cannot taste or smell the ingredients before you use them. The assistant witch will be moderating your potion making.`,
       `When each group has made a potion, you will taste test each other's potions to gauge which one is correct.`,
       `Everyone take a sampling glass and split each potions amongst everyone. Rate your potion in terms of your favourite to least favourite.`,
@@ -195,6 +177,48 @@ const divinationGame = (
       `2 minutes to write down who you think drew each picture`,
       `The answers will be revealed and you can grade your own sheet.`,
       `All correct = 3 points, 1-2 wrong = 2 points, 3 wrong = one point, 3-5 wrong = one penalty, 6+ wrong = two penalties`,
+    ]}
+  />
+);
+
+const broomDeliveryGame = (
+  <NormalDialogue
+    isGlobal={true}
+    header={"BROOM RELAY"}
+    text={[
+      `You are tasked with delivering the magic ring artifacts`,
+      `Split up into two even teams and line up from the table to the window in two rows.`,
+      `The person closest to the table starts with the broom between their knees, and must pass the broom to the next person.`,
+      `At the window, pick up the ring artifact and pass the broom back across the team to the other side.`,
+      `The team that delivers the most rings, wins. If both teams deliver the same amount, then the team that finished first wins.`,
+      `Each member of the winning team gets 4 points. The losing team takes 3 penalties.`,
+    ]}
+  />
+);
+
+const prepCurseGame = (
+  <NormalDialogue
+    isGlobal={true}
+    header={"PREPARE THE CURSE"}
+    text={[
+      `Everyone take a curse board and write down something you want to curse in the middle.`,
+      `Using the stakes provided, stake the four corners of the board.`,
+      `If you haven't already, prepare your cursed string loop.`,
+      `When everyone is prepared, write "Cursetime" to proceed to the instructions.`,
+      `If you succeed on the first try, get 3 points, otherwise take 3 penalties and try again.`,
+    ]}
+    answers={["Cursetime"]}
+  />
+);
+
+const curseGame = (
+  <NormalDialogue
+    isGlobal={true}
+    header={"CASTING THE CURSE"}
+    text={[
+      `Everyone take a curse stake.`,
+      `When everyone is ready, use the stake to stab between and around the strings as much as possible in one minute`,
+      `The person with the most destroyed board gets 3 points`,
     ]}
   />
 );
@@ -236,12 +260,12 @@ const dialogue2024 = [
   <NormalDialogue
     text="Halloween 2025 >:)"
     image={firstImg}
-    answers={["witches"]}
+    answers={["classtime"]}
     isGlobal={true}
   />,
   <NormalDialogue
     text={[
-      `Welcome new students! I am Headmaster ${headmasterName} We're so happy to have you here in our school. With Halloween just around the corner we've been in need of some fresh blood.`,
+      `Welcome new students! I am Headmaster ${headmasterName} of ${schoolName} School of Magic! We're so happy to have you! With Halloween just around the corner we've been in need of some fresh blood.`,
       "You see, this year our school has been bestowed the honour of hosting this year's Magic Showcase.",
     ]}
     audio={introMusic}
@@ -261,7 +285,7 @@ const dialogue2024 = [
   <NormalDialogue
     text={[
       "You can find your report card on the wall. The best students will be rewarded and the worst... well, just do your best and you won't have to find out.",
-      "Your host will help me grade, but I may need one of you to step up as well.",
+      "Your host will help me grade, but I may need one of you to step up as well. Those who go above and beyond may be awarded extra credit.",
     ]}
     image={headmaster}
     isGlobal={true}
@@ -312,6 +336,7 @@ const dialogue2024 = [
     image={headmaster}
     answers={[]}
     isGlobal={true}
+    stopAudio={true}
   />,
   familiarSummoningRules,
   <NormalDialogue
@@ -385,61 +410,29 @@ const dialogue2024 = [
     isGlobal={true}
   />,
   <NormalDialogue
-    text="Welcome my dears to shapeshifting class!"
-    image={shapeshifting_witch}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Oh! Some of you already seem to be experts of the craft! I think you deserve some bonus points!"
-    image={shapeshifting_witch}
-    isGlobal={true}
-  />,
-  shapeshiftingJudging,
-  <NormalDialogue
-    text="Not bad... but there are always new tricks you can learn!"
-    image={shapeshifting_witch}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text="Why don't you decide what you should shift into?"
-    image={shapeshifting_witch}
-    isGlobal={true}
-  />,
-  shapeshiftingPractice,
-  <NormalDialogue
-    text="Well done, everyone! Though those were certainly some interesting choices..."
-    image={shapeshifting_witch}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={[
-      "I will teleport you to your next class when you're ready!",
-      'Write "Next" to go to your next class',
-    ]}
-    image={shapeshifting_witch}
-    isGlobal={true}
-    answers={["Next"]}
-  />,
-  <NormalDialogue
-    text="Hm... the next ingredient is... no, it mustn't be that... mustn't be..."
+    text="A little dash of that and a little bit of this. Yes! Perfect! No, wait."
     image={potionsWitch}
     isGlobal={true}
   />,
   <NormalDialogue
-    text="Oh, class time already? Well, you already know what to do, I left the instructions on the potions table if you forgot..."
+    text="Oh, class time already? Well, you already know what to do, right? I left the instructions on the potions table if you forgot."
     image={potionsWitch}
     isGlobal={true}
   />,
   <NormalDialogue text="Your teacher doesn't seem to notice that you're not her regular students... well I'm sure you can figure it out!" />,
   potionMaking,
   <NormalDialogue
-    text="Hm? You're done? Alright, then off to your next class..."
+    text="Haha! Now I've got it! Oh that was a worm, it was supposed to be an ant. Oh! You're done? Very good! Off to your next class!"
     image={potionsWitch}
     isGlobal={true}
   />,
-  <NormalDialogue text="..." image={potionsWitch} isGlobal={true} />,
   <NormalDialogue
-    text="You can't teleport on your own? Just drink the teleportation potion!"
+    text="5 worms can substitute one ant... or was it the opposite..."
+    image={potionsWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Huh? You can't teleport on your own? I'm busy, just drink the teleportation potion!"
     image={potionsWitch}
     isGlobal={true}
   />,
@@ -454,12 +447,24 @@ const dialogue2024 = [
     isGlobal={true}
   />,
   <NormalDialogue
-    text="Today, we'll be having a race!"
+    text={[
+      "I'm sure you already know flying basics so we'll move on to applications.",
+    ]}
     image={broomWitch}
     isGlobal={true}
   />,
   <NormalDialogue
-    text="Your next class is... oh dear."
+    text={[
+      "Balancing yourself on a broom is one thing, but balancing while transporting items can be tricky.",
+      "If you're a delivery witch, you have to be extra skilled, so you can pass off packages to other witches, mid-air!",
+      "Today, we'll see if you have what it takes!",
+    ]}
+    image={broomWitch}
+    isGlobal={true}
+  />,
+  broomDeliveryGame,
+  <NormalDialogue
+    text="Your next class is... oh boy."
     image={broomWitch}
     isGlobal={true}
   />,
@@ -521,7 +526,12 @@ const dialogue2024 = [
   />,
   divinationGame,
   <NormalDialogue
-    text="What a pitiful excuse for divination... I would send you to the dungeons but unfortunately I foresee a great calamity if I do... Alas."
+    text="What a pitiful excuse for divination... I would send you to the dungeons but our headmaster is still trying to limit the number of student deaths. A wasted effort if you ask me..."
+    image={divinationWitch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Come to think of it, did I forget to release a student from detention? Hm... Well I don't really care either way."
     image={divinationWitch}
     isGlobal={true}
   />,
@@ -536,12 +546,79 @@ const dialogue2024 = [
     answers={["Next"]}
   />,
   <NormalDialogue
+    text="Welcome..... to your class on dark magic..."
+    image={darkMage}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Today we will be casting curses. When you are ready, I will send you a vision with the instructions."
+    image={darkMage}
+    isGlobal={true}
+  />,
+  prepCurseGame,
+  <NormalDialogue
+    text=""
+    video_url="https://storage.googleapis.com/halloween2024/halloween2025/StringCurse.mp4"
+  />,
+  curseGame,
+  <NormalDialogue
+    text="Dark magic is useful in moderation... but be careful not to use it too much... or you might end up like poor Prudence..."
+    image={darkMage}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Heed my warning... and be off to your next class..."
+    image={darkMage}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={`Write "Next" when you're ready`}
+    isGlobal={true}
+    answers={["Next"]}
+  />,
+  <NormalDialogue
+    text="Welcome, my dears, to shapeshifting class!"
+    image={shapeshifting_witch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Oh! Some of you already seem to be experts of the craft! I think you deserve some bonus points!"
+    image={shapeshifting_witch}
+    isGlobal={true}
+  />,
+  shapeshiftingJudging,
+  <NormalDialogue
+    text="Not bad... but there are always new tricks you can learn!"
+    image={shapeshifting_witch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text="Why don't you decide what you should shift into?"
+    image={shapeshifting_witch}
+    isGlobal={true}
+  />,
+  shapeshiftingPractice,
+  <NormalDialogue
+    text="Well done, everyone! Though those were certainly some interesting choices..."
+    image={shapeshifting_witch}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      "I will teleport you to your next class when you're ready!",
+      'Write "Next" to go to your next class',
+    ]}
+    image={shapeshifting_witch}
+    isGlobal={true}
+    answers={["Next"]}
+  />,
+  <NormalDialogue
     text="Welcome to your offensive spells class! Now that you know the basics of magic, it's time you learned how to fight!"
     image={duelWitch}
     isGlobal={true}
   />,
   <NormalDialogue
-    text="To cast a spell, there are three things to focus on when casting a spell; the incantation, the form, and the spirit."
+    text="There are three things to focus on when casting a spell; the incantation, the form, and the spirit."
     image={duelWitch}
     isGlobal={true}
   />,
@@ -585,7 +662,7 @@ const dialogue2024 = [
     isGlobal={true}
   />,
   <NormalDialogue
-    text={['If you feel ready, write "Ready"']} // TODO - maybe I'll make this a hidden code
+    text={["Are you ready?"]}
     isGlobal={true}
     answers={["Ready"]}
   />,
@@ -798,7 +875,7 @@ const dialogue2024 = [
   />,
   <NormalDialogue
     text={[
-      "Someone go fetch the Council of Moderators so we can figure out what to do.",
+      "Someone go fetch the microsoft word or whatever his name was, so we can figure out what to do.",
     ]}
     image={headmaster}
     isGlobal={true}
@@ -916,8 +993,9 @@ const dialogue2024 = [
     image={headmaster}
     isGlobal={true}
   />,
+  <NormalDialogue text={[`...`]} isGlobal={true} />,
   <NormalDialogue
-    text={[`This should buy us some times...`]}
+    text={[`This should buy us some time...`]}
     image={headmaster}
     isGlobal={true}
   />,
@@ -977,6 +1055,7 @@ const dialogue2024 = [
     text={[`You cannot hide from me!`]}
     image={possessed_witch}
     isGlobal={true}
+    audio={witchReturn}
   />,
   <NormalDialogue text={[`Quick!`]} image={headmaster} isGlobal={true} />,
   <NormalDialogue
@@ -1082,15 +1161,15 @@ const dialogue2024 = [
   <NormalDialogue
     text={[
       "Attach a long distance attack charm to your wands. Make sure to have the spirits you summoned near you so they can defend you.",
-      "Capax Infiniti: infinity - defeats creatures of the dead",
-      "Nox Cruenta: zig zag - defeats creatures peering in",
-      "Undam Mortis: swirl - defeats flames of darkness",
+      "Capax Infiniti: infinity - defeats creatures peering in",
+      "Nox Cruenta: zig zag - defeats flames of darkness",
+      "Undam Mortis: swirl - defeats creatures of the dead",
       "Good luck!",
     ]}
     stopAudio
     answers={["spellattack"]}
   />,
-  // fight goes here
+  <BossBattle />,
   <NormalDialogue
     text={[`YOU WILL REGRET THIS`]}
     image={prudence}
@@ -1118,7 +1197,7 @@ const dialogue2024 = [
   <NormalDialogue text={["Yippee!"]} image={happy_witch} isGlobal={true} />,
   <NormalDialogue text={[""]} image={broomWitchExasperated} isGlobal={true} />,
   <NormalDialogue
-    text={["CLEAN OUT YOUR AMULET"]}
+    text={["CLEANSE YOUR AMULET"]}
     image={broomWitch}
     isGlobal={true}
   />,
@@ -1132,7 +1211,67 @@ const dialogue2024 = [
     image={headmaster}
     isGlobal={true}
   />,
-  <BossBattle />,
+  <NormalDialogue
+    text={["What will happen to the staff?"]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      "I think it's best we keep it locked up somewhere safe. It should only be used in emergencies.",
+    ]}
+    image={wizard}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["But since we just prevented the end of the world..."]}
+    image={wizard}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["Tonight we'll use its magic to PARTY!"]}
+    image={wizard_party}
+    isGlobal={true}
+    audio={endMusic}
+  />,
+  <NormalDialogue
+    text={[
+      "Woo! I'll use my amulet to help throw the grandest Halloween party!",
+    ]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={["ahem"]} image={broomWitch} isGlobal={true} />,
+  <NormalDialogue
+    text={["...after I cleanse my amulet!"]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      "Some of your students went above and beyond tonight! We will bestoy rewards upon them!",
+    ]}
+    image={wizard_party}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["Top three students, choose your rewards!"]}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["And some of you need to study harder!"]}
+    image={headmaster}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["Bottom three students take 5, 4, and 3 penalties (or a shot)"]}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["Happy Halloween!"]}
+    image={headmaster}
+    isGlobal={true}
+  />,
   <NormalDialogue text="HAPPY HALLOWEEN!" image={endCard} isGlobal={true} />,
 ];
 
