@@ -41,7 +41,7 @@ const CodeHandler = () => {
 
   const trySetCode = async (code: string) => {
     setLoading(true);
-    const res = (await get(ref(db, code))).val();
+    const res = await get(ref(db, code));
 
     if (res) {
       setCode(code);

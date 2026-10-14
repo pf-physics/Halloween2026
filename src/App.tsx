@@ -25,14 +25,14 @@ function App() {
   const screenSize = window.innerWidth;
 
   useEffect(() => {
-    document.title = "Halloween 2025";
+    document.title = "Halloween 2026";
   }, []);
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
         {!fullScreen && (
           <header className="App-header">
-            <div>Halloween 2025</div>
+            <div>Halloween 2026</div>
             <Menu />
           </header>
         )}

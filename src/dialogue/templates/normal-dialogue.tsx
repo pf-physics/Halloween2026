@@ -14,10 +14,18 @@ import { useSetGlobalScene } from "../../hooks/common";
 import { setFullScreen } from "../../store/miscSlice";
 import { useIncPoints } from "../../hooks/pointsHooks";
 
+export type AnswerOption = {
+  option: string[];
+  response: string;
+  valid: Boolean;
+};
+
 export type DialogueProps = {
   text: string | string[];
   image?: string;
   answers?: string[];
+  answerOptions?: AnswerOption[];
+  defaultAnswerOption?: string;
   audio?: any;
   isGlobal?: boolean;
   globalScene?: string;
@@ -25,13 +33,16 @@ export type DialogueProps = {
   resetFullScreen?: boolean;
   answerPoints?: number;
   stopAudio?: boolean;
-  video_url?: string;
+  video_url?: string; // should be camelCase
+  videoUrls?: string[];
 };
 
 const NormalDialogue = ({
   text,
   image,
   answers = [],
+  answerOptions = [],
+  defaultAnswerOption,
   audio,
   isGlobal = true,
   globalScene,
@@ -40,6 +51,7 @@ const NormalDialogue = ({
   answerPoints,
   stopAudio,
   video_url,
+  videoUrls = [],
 }: DialogueProps) => {
   const index = useAppSelector((state) => state.index.value);
   const playerIndex = useAppSelector((state) => state.playerIndex.value);
@@ -53,6 +65,7 @@ const NormalDialogue = ({
     index !== undefined &&
     !(playerIndex < index) &&
     answers.length > 0;
+  const optionAnswerRequired = answerOptions.length > 0;
   const dispatch = useAppDispatch();
   const setGlobalScene = useSetGlobalScene();
 
@@ -77,10 +90,34 @@ const NormalDialogue = ({
   }, [playerIndex]);
 
   const [ans, setAns] = useState<string>("");
+  const [validOption, setValidOption] = useState<Boolean>(false);
+  const [optionTextResponse, setOptionTextResponse] = useState<
+    string | undefined
+  >(undefined);
 
   const handleNext = () => {
-    if (ansRequired) {
-      if (answers.map((a) => a.toLowerCase()).includes(ans.toLowerCase())) {
+    setOptionTextResponse(undefined);
+
+    if (optionAnswerRequired) {
+      setAns("");
+      if (validOption) {
+        setValidOption(false);
+        isGlobal ? globalIncIdx() : incIdx();
+      } else {
+        const targetAns = answerOptions.find((opt) =>
+          opt.option.some((a) => ans.toLowerCase().includes(a.toLowerCase())),
+        );
+        if (targetAns !== undefined) {
+          setOptionTextResponse(targetAns.response);
+          if (targetAns.valid) {
+            setValidOption(true);
+          }
+        } else if (defaultAnswerOption) {
+          setOptionTextResponse(defaultAnswerOption);
+        }
+      }
+    } else if (ansRequired) {
+      if (answers.map((a) => ans.toLowerCase().includes(a.toLowerCase()))) {
         setAns("");
         if (answerPoints) {
           incPoints(answerPoints, "answer");
@@ -93,10 +130,12 @@ const NormalDialogue = ({
   };
 
   const handleBack = () => {
+    setOptionTextResponse(undefined);
     decIdx();
   };
 
   const handleReset = () => {
+    setOptionTextResponse(undefined);
     jumpToCurrent();
   };
 
@@ -123,12 +162,23 @@ const NormalDialogue = ({
   return (
     <div>
       <Dialogue header={header} text={text} image={image} />
+      {optionTextResponse && (
+        <div className="dialogue-text">{optionTextResponse}</div>
+      )}
       {video_url && (
         <video src={video_url} controls width="100%">
           Your browser does not support the video tag.
         </video>
       )}
-      {answers.length > 0 && ansRequired && (
+      {videoUrls.map((url, i) => (
+        <p key={i}>
+          <video src={url} controls>
+            Your browser does not support the video tag.
+          </video>
+        </p>
+      ))}
+      {((answers.length > 0 && ansRequired) ||
+        (optionAnswerRequired && !validOption)) && (
         <input
           value={ans}
           autoFocus

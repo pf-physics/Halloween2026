@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Dialogue from "../dialogue/templates/dialogue";
 import { Button } from "@mui/material";
-import { graveDiggerImg } from "../dialogue/dialogue-list";
+import { chatImg } from "../dialogue/dialogue-list";
 
 type DialogueOptions = { [key: string]: string[] };
 const dialogueOptions: DialogueOptions = {
@@ -90,7 +90,7 @@ const ChatMenu = () => {
       <Dialogue
         header={"Chat with Mortimer"}
         text={textKey ? dialogueOptions[textKey][idx] : defaultText}
-        image={graveDiggerImg}
+        image={chatImg}
       />
       {!textKey && (
         <div>
