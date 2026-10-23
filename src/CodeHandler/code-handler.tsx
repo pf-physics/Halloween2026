@@ -43,11 +43,12 @@ const CodeHandler = () => {
     setLoading(true);
     const res = await get(ref(db, code));
 
-    if (res) {
+    if (res && res.val()) {
       setCode(code);
       setCodeValid(true);
       const team = localStorage.getItem("team");
       const teamsObj = (await get(ref(db, code + "/" + teamAccess))).val();
+      console.log(teamsObj);
       const teamList = Object.keys(teamsObj);
       dispatch(setTeams(teamList));
 
@@ -114,6 +115,7 @@ const CodeHandler = () => {
     const [inputCode, setInputCode] = useState("");
     const jokeCode = "goose";
     const jokeCode2 = "wenis";
+    const jokeCode3 = "soup";
 
     const submitCode = () => {
       if (inputCode.length === 0) {
@@ -130,6 +132,9 @@ const CodeHandler = () => {
         return;
       } else if (inputCode.toLocaleLowerCase() === jokeCode2) {
         setErr("Nice try. It will now be confiscated.");
+        return;
+      } else if (inputCode.toLocaleLowerCase() === jokeCode3) {
+        setErr("soup soup soup");
         return;
       }
       setTries(tries + 1);

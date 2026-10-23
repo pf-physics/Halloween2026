@@ -117,7 +117,7 @@ const NormalDialogue = ({
         }
       }
     } else if (ansRequired) {
-      if (answers.map((a) => ans.toLowerCase().includes(a.toLowerCase()))) {
+      if (answers.some((a) => ans.toLowerCase().includes(a.toLowerCase()))) {
         setAns("");
         if (answerPoints) {
           incPoints(answerPoints, "answer");
@@ -131,11 +131,13 @@ const NormalDialogue = ({
 
   const handleBack = () => {
     setOptionTextResponse(undefined);
+    setValidOption(false);
     decIdx();
   };
 
   const handleReset = () => {
     setOptionTextResponse(undefined);
+    setValidOption(false);
     jumpToCurrent();
   };
 
@@ -159,9 +161,13 @@ const NormalDialogue = ({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [handleNext]);
 
+  // DOUBLE CHECK THIS
+  var showRegText = optionTextResponse != "undefined" && !validOption;
+
   return (
     <div>
-      <Dialogue header={header} text={text} image={image} />
+      <Dialogue header={header} text={showRegText ? text : ""} image={image} />
+
       {optionTextResponse && (
         <div className="dialogue-text">{optionTextResponse}</div>
       )}
@@ -172,7 +178,11 @@ const NormalDialogue = ({
       )}
       {videoUrls.map((url, i) => (
         <p key={i}>
-          <video src={url} controls>
+          <video
+            style={{ width: "100%", maxWidth: "100%", height: "auto" }}
+            src={url}
+            controls
+          >
             Your browser does not support the video tag.
           </video>
         </p>

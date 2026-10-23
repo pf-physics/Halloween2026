@@ -38,7 +38,7 @@ function App() {
         )}
         <div
           className="app-content"
-          style={{ maxWidth: fullScreen ? undefined : "600px" }}
+          style={{ maxWidth: fullScreen ? undefined : "500px" }}
         >
           <CodeHandler />
         </div>

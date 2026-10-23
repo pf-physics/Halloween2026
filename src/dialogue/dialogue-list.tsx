@@ -1,12 +1,44 @@
 import NormalDialogue from "./templates/normal-dialogue";
 import introMusic from "../assets/audio/magic_halloween.mp3";
-import firstImg from "../assets/imgs/cauldron_pumpkin.jpg";
+import firstImg from "../assets/imgs/56033.jpg";
 import many_ghosts from "../assets/imgs/many_ghosts_freepik.jpg";
 import chef_spider from "../assets/imgs/chef_spider.png";
-import grim_reaper from "../assets/imgs/GrimReaper.jpg";
-import buffSpider from "../assets/imgs/buffSpider.png";
+//import grim_reaper from "../assets/imgs/GrimReaper.jpg";
+import grim_reaper from "../assets/imgs/grim_reaper.png";
+import buffSpider from "../assets/imgs/glowing buff.png";
+import purpleSpider1 from "../assets/imgs/purple_spider1.png";
+import purpleSpiderWink from "../assets/imgs/purple_spider2.png";
+import purpleSpiderHanging from "../assets/imgs/spiderhang.png";
+import skeleton5 from "../assets/imgs/skeleton.png";
+import coolSpider from "../assets/imgs/cool_spider.png";
+import witchSpider from "../assets/imgs/witch_spider.png";
+import cuteBlackWidow from "../assets/imgs/vecteezy_cute-spider-weaving-a-web_48964247.jpg";
+import bffs from "../assets/imgs/bffs3.png";
+import spaceGrimWeaver from "../assets/imgs/grim weaver 2.png";
+import endCard from "../assets/imgs/endcard2.png";
+import spiderWebs from "../assets/imgs/2210_w030_n003_461b_p1_461.jpg";
 
-import endCard from "../assets/imgs/cauldron_pumpkin.jpg";
+import partyMusic from "../assets/audio/fakeParty2.mp3";
+import runescapeHalloween from "../assets/audio/Runescape_Halloween.mp3";
+import runescapeSpider from "../assets/audio/spiderRune.mp3";
+import prettySadPiano from "../assets/audio/Wicked-Halloween_Takinov_piano_ominous.mp3";
+import ominousMusic from "../assets/audio/summoning2.mp3";
+import chillOminous from "../assets/audio/ominous.mp3";
+import balloonPop from "../assets/audio/bossFight.mp3";
+import playfulMusic from "../assets/audio/tricktreat.mp3";
+import scarySpiderMusic from "../assets/audio/Infestation.mp3";
+import spookyWaltz from "../assets/audio/Intro_2024.mp3";
+import sillyCharacter from "../assets/audio/silly chill Halloween character.mp3";
+import veilMusic from "../assets/audio/Midnight-Halloween_Takinov.mp3";
+import spooky_sad from "../assets/audio/House-of-Ghosts_Takinov.mp3";
+import halloween_dance from "../assets/audio/Halloween-Dance_Takinov.mp3";
+import midnight_halloween from "../assets/audio/Midnight-Halloween_Takinov.mp3";
+import rave from "../assets/audio/rave.mp3";
+import witchesBall from "../assets/audio/Halloween-Witches-Ball_Takinov.mp3";
+import itsy from "../assets/audio/itsy.mp3";
+
+import evilGhost from "../assets/imgs/evilGuy.jpg";
+
 import wizardArrival from "../assets/audio/Wizard_arrival.mp3";
 
 import BossBattle from "./scenes/boss-battle";
@@ -16,67 +48,88 @@ import blackWidow from "../assets/imgs/bw2.png";
 
 import newHalloween from "../assets/audio/New-Halloween-Theme.mp3";
 import halloweenGroove from "../assets/audio/Halloween-Groove.mp3";
-import carnage from "../assets/audio/Carnage.mp3";
+import carnage from "../assets/audio/carnage louder.mp3";
+import evilGuyWebbed from "../assets/imgs/evilGuyWebbed.jpg";
+import evilGuyMad from "../assets/imgs/evilGuyMad.png";
+import ghost2 from "../assets/imgs/ghost5.png";
+import ghost5 from "../assets/imgs/ghost5.png";
+import evilSkeleton from "../assets/imgs/evilskeleton.png";
+import evilCreature from "../assets/imgs/vecteezy_cartoon-skull-with-fangs_48057271.jpg";
+import cuteSpider1 from "../assets/imgs/cuteSpider1.png";
+import cuteSpider2 from "../assets/imgs/cuteSpider1.png";
+import wizardNPC from "../assets/imgs/wizard_party.png";
+import spookySpider from "../assets/imgs/vecteezy_red-eyed-spider-sticker-design_72661039.jpg";
+import cosmicSpider2 from "../assets/imgs/cosmicspider2.png";
+import cosmicSpiderTrap from "../assets/imgs/cosmic spider trap.png";
+import spiderNPC from "../assets/imgs/spiderNPC.jpg";
 
 const eventName = "Teardown of the Veil"; // Veil Removal Ceremony
 const lifeLine = "life line";
 const placeholder = blackWidow;
-const ticketSpider = placeholder;
+const ticketSpider = coolSpider;
 const grimReaper = grim_reaper;
 const pointName = "link";
-const spiderNPC1 = placeholder;
-const spiderNPC2 = placeholder;
-const spiderNPC3 = placeholder;
+const spiderNPC1 = spiderNPC;
+const spiderNPC2 = cuteSpider1;
+const spiderNPC2_2 = cuteSpider2;
+const spiderNPC3 = witchSpider;
 const spiderMC = placeholder;
-const lilSpiderMC = placeholder;
-const grimWeaver = placeholder;
-const ghostNPC = "../assets/imgs/ghosts.png";
-const skeletonNPC = placeholder;
-const wizardNPC = "../assets/imgs/wizard_party.png";
-const evilGuy1 = placeholder;
-const evilGuy2 = placeholder;
-const evilGuy3 = placeholder;
+const grimWeaver = cosmicSpider2;
+const grimWeaverTrap = cosmicSpiderTrap;
+const ghostNPC = ghost2;
+const skeletonNPC = skeleton5;
+const evilGuy1 = evilGhost;
+const evilGuy2 = evilSkeleton;
+const evilGuy3 = evilCreature;
 const evilGuyEntrance = carnage;
-const blackWidowPal = placeholder;
-const spiderPartner = placeholder;
-const weaverLocation = "Gertrude's Crypt";
+const blackWidowPal = cuteBlackWidow;
+const spiderPartner = purpleSpider1;
+const spiderPartnerIntro = purpleSpiderHanging;
+const weaverLocation = "Mortimer's Crypt";
+const weaverLoc = "crypt";
 
 // TODO delete - it's for the chat menu
 export const chatImg = placeholder;
 
-const rules = `1st: 3 points, 2nd: 2 points, 3rd: 1 point. Last place 3 penalties, 2nd to last 2 penalties, 3rd to last 1 penalty`;
+const rules = [
+  `1st: 3 ${pointName}s, 2nd: 2 ${pointName}s, 3rd: 1 ${pointName}. Last place 3 penalties and lose 2 ${pointName}s, 2nd to last 2 penalties and lose 1 ${pointName}, 3rd to last 1 penalty`,
+  `Write Next to finish`,
+];
 
 const capitalize = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
-
-const spiderTicketRules = (
-  <NormalDialogue
-    isGlobal={true}
-    header={"COUNTERFEIT TICKETS"}
-    videoUrls={[
-      // TODO - https://www.youtube.com/watch?v=sGR9nA7L1zE
-      "https://storage.googleapis.com/halloween2024/halloween2026/placeholder1",
-      "https://storage.googleapis.com/halloween2024/halloween2026/placeholder1",
-    ]}
-    text={[
-      `Use the webs provided to weave a ticket to get into the party`,
-      `When your web is complete, take a picture of it and upload it to the group. Vote on the webs by reacting with 🕸️ on your favourite and 🕷️ on your second favourite.`,
-      rules,
-    ]}
-    stopAudio={true}
-  />
-);
 
 const potionRoulette = (
   <NormalDialogue
     isGlobal={true}
     header={"Potion Roulette"}
     text={[
-      `There are four potions that will reveal your ${lifeLine}, some are more palatable than others: A potions - 50% chance of being hard alcohol. B - potions 50% chance of being gross.`,
+      `There are four potions that will reveal your ${lifeLine}, some are more palatable than others: A potions - 50% chance of being hard alcohol. B potions - 50% chance of being gross.`,
       `Drinking these potions will also extend your ${lifeLine} by 1.`,
-      `Those who don't want to risk drinking the potions, can take a sip of your own drink. Your ${lifeLine} will not increase.`,
+      `Those who don't want to risk drinking the potions, can take a sip of your own drink. Your ${lifeLine} will not increase or decrease.`,
+      `Write next to continue`,
     ]}
+    answers={["next"]}
+  />
+);
+
+const spiderTicketRules = (
+  <NormalDialogue
+    isGlobal={true}
+    header={"COUNTERFEIT TICKETS"}
+    videoUrls={[
+      "https://storage.googleapis.com/halloween2024/bracelet1.mp4",
+      "https://storage.googleapis.com/halloween2024/bracelet2.mp4",
+      "https://storage.googleapis.com/halloween2024/bracelet3.mp4",
+    ]}
+    text={[
+      `Use the webs provided to weave a ticket to get into the party`,
+      `When your web is complete, take a picture of it and upload it to the group. Vote on the webs by reacting with 🕸️ on your favourite and 🕷️ on your second favourite.`,
+      `1st: 3 ${pointName}s, 2nd: 2 ${pointName}s, 3rd: 1 ${pointName}.`,
+    ]}
+    stopAudio={true}
+    answers={["next"]}
   />
 );
 
@@ -86,12 +139,35 @@ const bugDeliveryRules = (
     header={"BUG DELIVERY"}
     text={[
       `Split up into two groups, each choose a bucket of bugs.`,
-      `Throw the bugs at the spiderweb on the wall. Try to get as many bugs as possible to stick to the web.
+      `Divide the bugs amongst your teammates. Throw the bugs at the spiderweb on the wall and try to get as many bugs as possible to stick.
        The group with the most bugs sticking wins`,
-      `The group that finishes first gets one bonus ${pointName}`,
-      rules,
+      `In the case of a tie, the group with more bugs in the center wins.`,
+      `Each member of the winning team gets 3 ${pointName}. The losing team takes 2 penalties each and lose one ${pointName} each.`,
     ]}
     stopAudio={true}
+    answers={["next"]}
+  />
+);
+
+const sandWeight = "30g";
+const timeLeftRules = (
+  <NormalDialogue
+    isGlobal={true}
+    header={"GRAINS OF TIME"}
+    text={[
+      `If one converts your ${lifeLine}s into grains of sand, it would only weight approximately ${sandWeight}!
+      Prove to the spider that you need to speak to the Grim Weaver by showing the number of grains of sand`,
+      `Each take a little bag and fill it up with sand (corn) that you think weighs ${sandWeight}`,
+      `Afterwards, everyone weigh their bags to see who is closest.`,
+      `Within 2g: +2 ${pointName}`,
+      `Within 5g: +1 ${pointName}`,
+      `Within 10g: -1 ${pointName}`,
+      `More than 10g difference: -2 ${pointName}`,
+      `The person who is most accurate gains 1 additional ${pointName}.`,
+      `Write "next" to continue`,
+    ]}
+    stopAudio={true}
+    answers={["next"]}
   />
 );
 
@@ -103,216 +179,133 @@ const foodDeliveryGame = (
       `Split up into two groups and line up from table to window.`,
       `Everyone will be provided a small spider web, which they will use to deliver the food (eyeballs) to the spiders on the other side.`,
       `When the signal is given, both groups will try to deliver as many eyes as they can. The group to deliver the most eyes wins.`,
-      rules,
+      `Eyes that are dropped must be abandonned`,
+      `Each member of the winning team gets 3 ${pointName}. The losing team takes 2 penalties each and lose 3 ${pointName}s each.`,
     ]}
     stopAudio={true}
+    answers={["next"]}
   />
 );
 
-const potionGame = // TODO - finish writing
-  (
-    <NormalDialogue
-      isGlobal={true}
-      header={"ANTI STICK POTION"}
-      text={[
-        `Split up into two groups.`,
-        `One group at a time, go to the potions room and make the potion.`,
-      ]}
-      stopAudio={true}
-    />
-  );
-
-// TODO - draw the examples
-const familiarSummoningRules = (
+const spiderArtGame = (
   <NormalDialogue
     isGlobal={true}
-    header={"FAMILIAR SUMMONING"}
+    header={"SPIDER ART"}
     text={[
-      `Everyone split up into pairs/groups. Using a summoning charm, draw a picture of the creature you want to summon. You have two tries.`,
-      `Examples of what is accepted will be provided. If your desired animal is not on the list, exceptions can be made.`,
-      `Bonus points will be awarded to those who go above and beyond.`,
-      `Cheating: get one extra try. Failure to cheat: your first attempt is your only attempt`,
-      //rules,
+      `Everyone take a board with spiderweb.`,
+      `When everyone is ready, use the pins and web to make an image.`,
+      `1 ${pointName}: pumpkin, skull`,
+      `2 ${pointName}s: ghost`,
+      `3 ${pointName}s: bat, spider`,
+      `4: ${pointName}s: cat`,
+      `5 ${pointName}s: dragon`,
+      `You can come up with your own image, and ${pointName}s will be awarded based on complexity.`,
     ]}
+    stopAudio={true}
+    answers={["next"]}
   />
 );
 
-const summonSoulsRules = (
+const pianoPortalGame = (
   <NormalDialogue
     isGlobal={true}
-    header={"SUMMONING LOST SOULS"}
+    header={"OPEN PORTAL"}
     text={[
-      `Attach a necromancy charm to your wand. When everyone is ready, use the charm to fish lost souls from the gate`,
-      `When time is up, the student with the most souls, wins.`,
-      `If necessary, split up into two groups.`,
-      `Cheating: get extra time (start early). Failure to cheat: get less time (start late). 7 seconds`, // DCDCDC - too much?
-      rules,
+      `To open the portal using spider magic, you need at least 6 limbs.`,
+      `In groups of 3 or 4, each claim 1 or two of the labelled notes on the piano.`,
+      `When everyone is ready, start the video and play along with the notes.`,
+      `Get 2 ${pointName}s if you succeed.`,
+      `(If everyone can fit around the piano, play it all together)`,
+      `Write "Next" to continue`,
     ]}
-  />
-);
-
-const ghostCreationRules = (
-  <NormalDialogue
-    isGlobal={true}
-    header={"GHOST COMMUNING"}
-    text={[
-      `Everyone grab a soul (balloon) and draw a face on it.`,
-      `Blow up the balloon as big as you can. Biggest balloon wins.`,
-      rules,
+    videoUrls={[
+      "https://storage.googleapis.com/halloween2024/piano_with_music",
     ]}
+    stopAudio={true}
+    answers={["next"]}
   />
 );
 
-const ghostConnectionRules = (
+const potionGame = (
   <NormalDialogue
     isGlobal={true}
-    header={"GHOST BONDING"}
+    header={"ANTI STICK POTION"}
     text={[
-      `Everyone take your ghost and space out. When everyone is ready, use your wand to keep the ghost afloat. The person who keeps their ghost floating the longest, wins`,
-      `If everyone survives for 2 minutes, additional rules will be added`,
-      `If you break or spill anything in the room, automatically lose and take 10 penalties`,
-      rules,
+      `Split up into two groups. One group at a time, go to the potions room and follow the instructions to make the potion.`,
+      `Using the receptacles provided, follow the instructions for EACH consumer of the potion.`,
+      `Write "next" when everyone has drank the potion`,
     ]}
+    stopAudio={true}
+    answers={["next"]}
   />
 );
 
-const shapeshiftingJudging = (
+const webPictionary = (
   <NormalDialogue
     isGlobal={true}
-    header={"SHAPESHIFTING CONTEST"}
+    header={"SLING THE WEB"}
     text={[
-      `Since everyone has already shapeshifted into something cool (costume), you can decide who gets the most points!`,
-      `Take three tokens and vote for your top 3 favourite shapeshifters`,
-      `Top shapeshifter gets 4 points. 2nd and 3rd place get 3 points, 4th and 5th get 2 points. Everyone else who shapeshifted get 1 point. If you didn't shapeshift, get no points and take 3 penalties.`,
+      `To your part of the scythe, attach a string with a marker at the end`,
+      `You will use a pen attached to the string to draw an image on the paper on the floor.
+       In pairs, both go up and pick one word each from the bucket each.`,
+      `Both will try to draw their word, while the rest guess.`,
+      `The person whose drawing is guessed first takes one ${pointName} from the other. The guesser also gains one ${pointName}`,
+      `Write "Next" to continue`,
     ]}
+    stopAudio={true}
+    answers={["next"]}
   />
 );
 
-const shapeshiftingPractice = (
+const relayGame2 = (
   <NormalDialogue
     isGlobal={true}
-    header={"SHAPESHIFTING PRACTICE"}
+    header={`CLEAR THE ${weaverLoc.toUpperCase()}`}
     text={[
-      `Everyone take two small pieces of paper and write something to shapeshift into, and sign with your name. Put your the papers into the pot.`,
-      `One at a time, pick a paper and become (act out) what's written on the paper. Say the name of the person who wrote it beforehand so they know not to guess.`,
-      `You get one minute to act out a maximum of two papers`,
-      `Keep track of how many you guessed and how many you acted out to decide the winner of the challenge`,
-      `Cheating: get 15 seconds extra. Failure to cheat: lose 15 seconds.`,
-      rules,
-    ]}
-  />
-);
-
-const potionMaking = (
-  <NormalDialogue
-    isGlobal={true}
-    header={"POTION MAKING"}
-    text={[
-      `Time for a group project! Split into three groups. One group at a time, head to the potion making room and make a potion, following the instructions.`,
-      `The instructions may be vague but any experienced witch is very familiar with these ingredients and knows should ones should be used, and which ones are poisoned.`,
-      `You cannot taste or smell the ingredients before you use them. The assistant witch will be moderating your potion making.`,
-      `When each group has made a potion, you will taste test each other's potions to gauge which one is correct.`,
-      `Everyone take a sampling glass and split each potions amongst everyone. Rate your potion in terms of your favourite to least favourite.`,
-      `Those feeling daring can top off their samples with essence of nightmares (if you do it for one potion, you must do it for all)`,
-      `3 points to each member of the team with the best potion, second team members get 1 point`,
-      `Cheating: you can each smell one ingredient. EVERYONE must succeed at cheating for anyone to cheat. Failure to cheat: your secondary ingredient must be randomly picked.`,
-    ]}
-  />
-);
-
-const divinationGame = (
-  <NormalDialogue
-    isGlobal={true}
-    header={"DIVINATION"}
-    text={[
-      `Everyone grab a new sheet of paper`,
-      `2 minutes to write down who you think drew each picture`,
-      `The answers will be revealed and you can grade your own sheet.`,
-      `All correct = 3 points, 1-2 wrong = 2 points, 3 wrong = one point, 3-5 wrong = one penalty, 6+ wrong = two penalties`,
-    ]}
-  />
-);
-
-const broomDeliveryGame = (
-  <NormalDialogue
-    isGlobal={true}
-    header={"BROOM RELAY"}
-    text={[
-      `You are tasked with delivering the magic ring artifacts`,
+      `Everyone take a web (string) and tie it up above your knees, with 1 leg of space between your knees.
+        Tie a link on to a piece of string like a hook and hang it from your knees (there will be a demonstration)`,
       `Split up into two even teams and line up from the table to the window in two rows.`,
-      `The person closest to the table starts with the broom between their knees, and must pass the broom to the next person.`,
-      `At the window, pick up the ring artifact and pass the broom back across the team to the other side.`,
-      `The team that delivers the most rings, wins. If both teams deliver the same amount, then the team that finished first wins.`,
-      `Each member of the winning team gets 4 points. The losing team takes 3 penalties.`,
+      `Pass the bombs from person using the hook. The team to extract 6 bombs first, wins.`,
+      `The winning team takes ${pointName}s from the losing team for each bomb they didn't extract. (in the case of an odd number of people, take/leave ${pointName}s from the source.)`,
     ]}
+    stopAudio={true}
+    answers={["next"]}
   />
 );
 
-const prepCurseGame = (
+const finalGame = (
   <NormalDialogue
     isGlobal={true}
-    header={"PREPARE THE CURSE"}
+    header={`DEFEAT THE GHOULS`}
     text={[
-      `Everyone take a curse board and write down something you want to curse in the middle.`,
-      `Using the stakes provided, stake the four corners of the board.`,
-      `If you haven't already, prepare your cursed string loop.`,
-      `When everyone is prepared, write "Cursetime" to proceed to the instructions.`,
-      `If you succeed on the first try, get 3 points, otherwise take 3 penalties and try again.`,
+      `Everyone take your part of the scythe and attach a marker to it.`,
+      `To defeat the ghouls, follow the instructions in the video`,
+      `Try to focus on accuracy rather than speed/force.`,
     ]}
-    answers={["Cursetime"]}
+    stopAudio={true}
+    answers={["fight"]}
   />
 );
 
-const curseGame = (
+const freeTheWeaver = (
   <NormalDialogue
     isGlobal={true}
-    header={"CASTING THE CURSE"}
+    header={`FREE THE WEAVER`}
     text={[
-      `Everyone take a curse stake.`,
-      `When everyone is ready, use the stake to stab between and around the strings as much as possible in one minute`,
-      `The person with the most destroyed board gets 3 points`,
+      `Everyone take your scythe. Remove the markers and replace it with something pointer.`,
+      `When everyone is ready, destroy the ghost energy on the ceiling holding the Grim Weaver captive!`,
+      `Try to catch what is contained in the energy bubbles to find the hidden message`,
     ]}
+    answers={["Arachnid"]}
+    audio={balloonPop}
   />
 );
 
-const magicDuelGame = (
-  <NormalDialogue
-    isGlobal={true}
-    header={"MAGIC DUEL"}
-    text={[
-      'Capax Infiniti" counters "Nox Cruenta", "Nox Cruenta" counters "Undam Mortis", and "Undam Mortis" counters "Capax Infiniti"',
-      "Capax Infiniti: infinity",
-      "Nox Cruenta: zig zag",
-      "Undam Mortis: swirl",
-      `Everyone pair up and duel each other. Best out of three wins each round.`,
-      // When there are 4 left, we judge them. If one spell wins against another, if they didn't have enough passion, consider it a tie
-      // If both did the same thing, both with passion, can choose the faster one
-      "When down to top 4, the audience will judge the winner based on every part of the spell. Ties will be broken by deciding who has the most spirit",
-      "Cheating: You can try to cheat to add an extra round if you lose. Take 4 penalties if you fail.",
-      rules,
-    ]}
-  />
-);
-
-export const cheatingRulesList = [
-  `Take a penalty to try and cheat.`,
-  `Roll a dice. If you roll {3, 4, 5, 6} you cheat successfully. If you roll {1, 2}, you are caught!`,
-  `If you fail to cheat take two more penalties and the cheating penalty.`,
-];
-
-const cheatingRules = (
-  <NormalDialogue
-    isGlobal={true}
-    header={"HOW TO CHEAT"}
-    text={cheatingRulesList}
-  />
-);
-
-const dialogue2024 = [
+const dialogue2026 = [
   <NormalDialogue
     text="Halloween 2026 >:)"
     image={firstImg}
-    answers={["classtime"]}
+    answers={["entertheweb"]}
     isGlobal={true}
   />,
   <NormalDialogue
@@ -363,7 +356,7 @@ const dialogue2024 = [
       `Sorry ya had to go through that! I wanted ta call out to ya, but the ticket master's already got beef with me and I didn't wanna make it worse!`,
     ]}
     image={grimReaper}
-    // new music
+    audio={playfulMusic}
     isGlobal={true}
   />,
   <NormalDialogue
@@ -376,7 +369,7 @@ const dialogue2024 = [
   />,
   <NormalDialogue
     text={[
-      `But don't ya panic! There's some kinda mistake for sure! We just gotta figure out what happened.`,
+      `But don't panic! There's some kinda mistake for sure! We just gotta figure out what happened.`,
     ]}
     image={grimReaper}
     isGlobal={true}
@@ -392,53 +385,61 @@ const dialogue2024 = [
       // DCDCDC - explanation
       // TODO - revival info
       `Everyone should now be able to see their ${lifeLine}`,
-      `These ${lifeLine}s are how you survive the night. If your ${lifeLine} runs out, you die.`,
+      `These ${lifeLine}s are how you survive the night.`,
+      `By succeeding at tasks, you receive ${pointName}s, which increase the length of your ${lifeLine}s. By failing, you lose them.`,
+      `If your ${lifeLine} runs out, you die.`,
     ]}
     isGlobal={true}
   />,
   <NormalDialogue
     text={[
       // TODO - redo explanation
-      `Ya see, Grim Reapers, such as myself, are in charge of cutting ${lifeLine}s, these are the strings tethering creatures to their bodies.`,
-      `When someone's time is up, a Grim Reaper and Black Widow will cut the string together, so we can reap the souls and bring em' to the next world.`,
+      `Ya see, these ${lifeLine}s are what tetheres a creature to their body. They show how long ya got left to live. Grim Reapers, such as myself, are in charge of cuttin' the soul free from yer body when yer ${lifeLine}'s all used up!`,
+      `When it's time, a Grim Reaper and Black Widow cut the string together, so we can reap the souls and bring em' to the next world.`,
     ]}
+    audio={sillyCharacter}
     image={grimReaper}
     isGlobal={true}
   />,
   <NormalDialogue
     text={[
-      `But something is wrong. Yer {lifeLines}s've been cut short. And yer not the only ones!
+      `But something is wrong. Yer ${lifeLine}s've been cut short. And yer not the only ones!
       I seen a bunch'a creatures with cut lines! Yer the only ones who believed my message though...`,
     ]}
     image={grimReaper}
     isGlobal={true}
   />,
-  <NormalDialogue // DCDCDC - the spider weaves or just strengthens?
+  <NormalDialogue
     text={[
-      `My spider buddy weaved up yours up nice and long! And I wasn't supposed'ta cut em until far into the future.
-    But no one else knows what your original strings looked like, so they don't think anything's wrong.`,
+      `My spider buddy weaved yours up nice and long! And I wasn't supposed'ta cut em til far into the future.
+      But nobody else but us know what yer ${lifeLine}s're s'pposed to look like, so they, so they don't believe anything's wrong.`,
     ]}
     image={grimReaper}
     isGlobal={true}
   />,
-  <NormalDialogue // maybe make this lore, so not spoken by Grim Reaper
-    text={[`One other being knows, and that's the Grim Weaver!`]}
+  <NormalDialogue
+    text={[
+      `That is, except for one other creature! And that's the Grim Weaver!`,
+    ]}
     image={grimReaper}
     isGlobal={true}
   />, // Black Widows act as our hourglass, leading us to those whose time is up. Then we reap their souls, and guide them to the next world.
   <NormalDialogue
     text={[
-      `The Grim Weaver decides all fate. The indestructible webs they weave are destiny itself;
+      `The Grim Weaver lives on the cosmic web and is the one who decides all fate.
+       The indestructible webs they weave are destiny itself;
       it links people together, decides when something comes to an end, and when something new will start.`,
     ]}
-    image={grimReaper}
+    audio={chillOminous}
     isGlobal={true}
+    image={spaceGrimWeaver}
   />,
   <NormalDialogue
     text={[
-      `The Grim Weaver decides the length of every creature's ${lifeLine}, and their spider underlings weave it.`,
+      `The Grim Weaver decides the length of every creature's ${lifeLine}. They delegate the weaving itself to their spider underlings.
+       They then apply the finishing touches that make it almost indestructible.`,
     ]}
-    image={grimReaper}
+    image={spaceGrimWeaver}
     isGlobal={true}
   />,
   <NormalDialogue
@@ -466,7 +467,7 @@ const dialogue2024 = [
   />,
   <NormalDialogue
     text={[
-      `This here is a spider party, so the tickets're woven by hand- er- by eight legs!`,
+      `The tickets're woven by hand- er- by eight legs!`,
       ` If ya want ta get in, yer gonna have'ta make yer own!`,
     ]}
     image={grimReaper}
@@ -491,7 +492,7 @@ const dialogue2024 = [
   <NormalDialogue
     text={[
       `Well, there's MY ticket!`,
-      `Hope my bones don't melt before I get ta the kitchen!`,
+      `Hope my bones don't melt before I get in the kitchen!`,
     ]}
     image={grimReaper}
     isGlobal={true}
@@ -561,6 +562,28 @@ const dialogue2024 = [
     isGlobal={true}
   />*/
   <NormalDialogue
+    text={[`You try to sneak through the kitchen...`]}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`What do you think YOU'RE doing?!`]}
+    image={chef_spider}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `You're part of the kitchen staff? If that's the case, then FETCH US MORE FOOD!`,
+    ]}
+    image={chef_spider}
+    isGlobal={true}
+  />,
+  bugDeliveryRules,
+  <NormalDialogue
+    text={[`The bugs you caught look alright, now bring em' to the party!`]}
+    image={chef_spider}
+    isGlobal={true}
+  />,
+  <NormalDialogue
     text={[
       // TODO
       `(Stay tuned for a scene change)`,
@@ -570,35 +593,112 @@ const dialogue2024 = [
   />,
   <NormalDialogue
     text={[
-      `You sneak in through the kitchen and manage not to get bitten by the staff.`,
+      `Spiders dressed in the finest silk are dancing on the floor, crawling on the walls, and hanging from the ceiling, feasting on a variety of refreshments.
+      Some of them are holding one drink with every arm (octuple fisting).`,
     ]}
+    audio={wizardArrival} // double check music
     isGlobal={true}
   />,
   <NormalDialogue
     text={[
-      `Spiders dressed in the finest silk are dancing on the floor, crawling on the walls, and hanging from the ceiling, feasting on a variety of refreshments.
-      Some of them are holding drinks with each arm (octuple fisting).`,
+      `Hey! Ya made it in!`,
+      `Ask about`,
+      `1. Soup`,
+      `2. Black Widow`,
+      `3. Weaver`,
+      `4. Event`,
+      `5. Bye`,
     ]}
+    image={grimReaper}
+    isGlobal={true}
+    answerOptions={[
+      {
+        option: ["Soup", "1", "1.", `1. Soup`],
+        response: `My bones're still steamin'! But I got a nice herby cologne now.`,
+        valid: false,
+      },
+      {
+        option: [`Black Widow`, "2", "2.", `1. Black Widow`],
+        response: `My partner's busy tonight. But maybe I'll get'ta see her soon...`,
+        valid: false,
+      },
+      {
+        option: ["Weaver", "3", "3.", "3. Weaver"],
+        response: `Ya gotta show your ${lifeLine}s to the Grim Weaver. They'll know what ta do, for sure.`,
+        valid: false,
+      },
+      {
+        option: ["Event", "4", "4.", "4. Event"],
+        response: `This party's when the Grim Weaver takes down the veil between living n' dead, so they can fix it up.
+        I don' usually join cause some a' the undead ain't a fan of me fer bringin' em over. But if I didn't they'd be stuck to their corpses!`,
+        valid: false,
+      },
+      {
+        option: [`Cheers`],
+        response: `Cheers! (take a sip)`,
+        valid: false,
+      },
+      {
+        option: ["5", "Bye", "Goodbye", "See you"],
+        response: `Good luck. I'll try ta talk to the Grim Weaver too!`,
+        valid: true,
+      },
+    ]}
+  />,
+  <NormalDialogue
+    text={[`You attempt to approach the Grim Weaver`]}
     isGlobal={true}
   />,
-  <NormalDialogue // TODO - maybe put name tags on spiders
+  <NormalDialogue
     text={[
-      `I don't recognize you, who's plus-one are you?`,
-      `(You, Gerald, ticket)`,
+      `Hey! Where do you think YOU'RE going?! What business do you have with the Grim Weaver?`,
+    ]}
+    image={spiderNPC3}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Your lifelines? Looks to me like you have plenty of time left...`]}
+    image={spiderNPC3}
+    isGlobal={true}
+  />,
+  timeLeftRules,
+  <NormalDialogue
+    text={[
+      `Hm... it sucks that you're going to die, but if you want to approach the Grim Weaver, you at least have to bring an offering!`,
+    ]}
+    image={spiderNPC3}
+    isGlobal={true}
+  />,
+  spiderArtGame,
+  <NormalDialogue
+    text={[
+      `With that offering you are... #1736 in line for meeting them, if they stick around for that long.`,
+    ]}
+    image={spiderNPC3}
+    isGlobal={true}
+    audio={witchesBall}
+  />,
+  <NormalDialogue
+    text={[
+      `I don't recognize you, whose plus-one are you?`,
+      `1. You`,
+      `2. Gerald`,
+      `3. Emily`,
+      `4. Ticket`,
     ]}
     answerOptions={[
       {
-        option: ["You", "Yours"],
+        option: ["1", "1.", "You", "Yours"],
         response: `I don't know you! (Lose one ${pointName})`,
         valid: false,
       },
       {
-        option: ["ticket"],
+        option: ["4", "4.", "ticket"],
         response: `You have a ticket? Those are clearly fake. *bites* (Lose one ${pointName})`,
         valid: false,
       },
       {
-        option: ["Gerald"],
+        option: ["2", "2.", "Gerald"],
         response: `Ah yes, that spider is always making friends with weirdos. No offense.`,
         valid: true,
       },
@@ -608,8 +708,18 @@ const dialogue2024 = [
         valid: true,
       },
       {
-        option: ["Emily"],
-        response: `That's my cousin. She doesn't know you! (Lose one ${pointName}$)`,
+        option: ["soup"],
+        response: `Mmm... soup...`,
+        valid: true,
+      },
+      {
+        option: ["Kitchen"],
+        response: `If you're part of the kitchen, then what are you doing here?! (Take a penalty)`,
+        valid: false,
+      },
+      {
+        option: ["3", "3.", "Emily"],
+        response: `That's my cousin. She doesn't know you! (Lose one ${pointName} and take a penalty)`,
         valid: false,
       },
     ]}
@@ -622,10 +732,11 @@ const dialogue2024 = [
       `So... nice party, eh?`,
       `Ask about:`,
       `1. Weaver`,
-      `2. ${lifeLine}s`,
+      `2. ${capitalize(lifeLine)}s`,
       `3. Cheers`,
       `4. Grim Reapers`,
-      `5. Bye (End conversation)`,
+      `5. Veil`,
+      `6. Bye (End conversation)`,
     ]}
     answerOptions={[
       {
@@ -656,81 +767,23 @@ const dialogue2024 = [
           `4. Grim Reaper`,
         ],
         // DCDCDC
-        response: `Grim Reapers collect souls when their ${lifeLine} has run out. Otherwise, the soul is stuck their corpse, unable to move. They work in pairs with Black Widows who act as their hourglass, bringing them to those whose time is up.`,
+        response: `Grim Reapers collect souls when a creature's ${lifeLine} has run out. Otherwise, the soul is stuck their corpse, unable to move. They work in pairs with Black Widows who act as their hourglass, bringing them to those whose time is up.`,
         valid: false,
       },
       {
-        option: ["5", "Bye", "Goodbye", "See you"],
+        option: ["5", "Veil", "5. Veil", "5."],
+        response: `Over the year, the veil gets weaker, and some creatures are able to wriggle their way through.
+        It's fine if they visit the land of the living for a bit, but eventually they get bored and start causing mishief... and killing people. So it's important we take the veil down so we can repair it.`,
+        valid: false,
+      },
+      {
+        option: ["6", "Bye", "Goodbye", "See you"],
         response: `Enjoy the party`,
         valid: true,
       },
     ]}
     defaultAnswerOption="*sips drink* Sorry, repeat that?"
     image={spiderNPC1}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={[
-      `Hey! Ya made it in!`,
-      `Ask about`,
-      `1. Soup`,
-      `2. Black Widow`,
-      `3. Weaver`,
-      `4. Bye`,
-    ]}
-    image={grimReaper}
-    isGlobal={true}
-    answerOptions={[
-      {
-        option: ["Soup", "1", "1.", `1. Soup`],
-        response: `My bones're still steamin'! But I got a nice herby cologne now.`,
-        valid: false,
-      },
-      {
-        option: [`Black Widow`, "2", "2.", `1. Black Widow`],
-        response: `My partner's busy tonight. But maybe I'll get'ta see her soon...`,
-        valid: false,
-      },
-      {
-        option: ["Weaver", "3", "3.", "3. Weaver"],
-        response: `Ya gotta show your ${lifeLine}s to the Grim Weaver. They'll know what ta do, for sure.`,
-        valid: false,
-      },
-      {
-        option: [`Cheers`],
-        response: `Cheers! (take a sip)`,
-        valid: false,
-      },
-      {
-        option: ["4", "Bye", "Goodbye", "See you"],
-        response: `Good luck. I'll try ta talk to the Grim Weaver too!`,
-        valid: true,
-      },
-    ]}
-  />,
-  <NormalDialogue
-    text={[`You attempt to approach the Grim Weaver`]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={[`Hey! Where do you think YOU'RE going?!`]}
-    image={spiderNPC3}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={[
-      `If you want to approach the Grim Weaver, you at least have to bring an offering!`,
-    ]}
-    image={spiderNPC3}
-    isGlobal={true}
-  />,
-  bugDeliveryRules,
-  <NormalDialogue
-    text={[
-      `Okay with that offering you are... #1736 in line for meeting them, if they stick around for that long.`,
-      `You should have brought a better snack, like eyeballs... mmmm....`,
-    ]}
-    image={spiderNPC3}
     isGlobal={true}
   />,
   <NormalDialogue
@@ -744,10 +797,11 @@ const dialogue2024 = [
   <NormalDialogue
     text={[
       `Has anyone told you you have delicious- I mean, beautiful eyes?`,
-      `...well I guess I can bump you up to #50. Get in line behind #49.`,
+      `...well since you delivered us such nice snacks, I guess I can bump you up to #50. Get in line behind #49.`,
     ]}
     image={spiderNPC3}
     isGlobal={true}
+    audio={spookyWaltz}
   />,
   <NormalDialogue
     text={[`Only 48 spiders ahead of me!`]}
@@ -759,14 +813,14 @@ const dialogue2024 = [
       `The ${eventName} will start soon, I'm so excited!`,
       `Ask about:`,
       `1. ${eventName}`,
-      `2. ${lifeLine}s`,
+      `2. ${capitalize(lifeLine)}s`,
       `3. Bye`,
     ]}
     answerOptions={[
       {
         option: ["Ceremony", "1", "1.", `1. ${eventName}`], // DCDCDC
-        response: `The Veil that separates our world and the world of the dead was woven by the Grim Weaver. Over the year, the Veil weakens, allowing some creatures to slip through to our side.
-                  A week before Halloween, the Veil is taken down by the Grim Weaver for repairs, allowing the dead to come through for a week of festivities! A week later, all creatures return to their side as the new Veil is put up, or they will perish.`,
+        response: `The Veil that separates our world and the world of the dead was woven by the Grim Weaver.
+                  A week before Halloween, the Veil is taken down by the Grim Weaver for repairs, allowing the dead to come through for a week of festivities! A week later, all creatures return to their side as the new Veil is put up, or they'll die here!`,
         valid: false,
       },
       {
@@ -790,15 +844,17 @@ const dialogue2024 = [
     image={spiderNPC2}
     isGlobal={true}
   />,
-  <NormalDialogue
+  <NormalDialogue // TODO - maybe have little scene change, so need code
     text={[`Oh! It's starting!`]}
-    image={spiderNPC2}
+    image={spiderNPC2_2}
     isGlobal={true}
+    // TODO - audio!
   />,
   <NormalDialogue
     text={[
       `Welcome All! Our illustrious Grim Weaver will now take down the Veil!`,
     ]}
+    audio={veilMusic}
     image={spiderMC}
     isGlobal={true}
   />,
@@ -812,6 +868,7 @@ const dialogue2024 = [
     text={["Eyyy guess who's back! It's me! Skelly Elly!"]}
     image={skeletonNPC}
     isGlobal={true}
+    audio={partyMusic}
   />,
   <NormalDialogue
     text={["Oooohhh... time for ghostly business...."]}
@@ -830,7 +887,7 @@ const dialogue2024 = [
   />,
   <NormalDialogue
     text={[
-      `Enjoy the party everyone! Make sure to meet back here after Halloween so you don't get locked out!`,
+      `Enjoy the party everyone! Make sure to meet back here after Halloween so you don't get trapped on this side!`,
     ]}
     image={spiderMC}
     isGlobal={true}
@@ -845,7 +902,7 @@ const dialogue2024 = [
   <NormalDialogue
     header={"!"}
     text={[""]}
-    image={grimWeaver}
+    image={grimWeaverTrap}
     isGlobal={true}
   />,
   <NormalDialogue
@@ -950,26 +1007,12 @@ const dialogue2024 = [
   />,
   <NormalDialogue
     text={[`I'm sorry. I didn't want to help em, but they got my partner...`]}
-    image={spiderMC}
+    image={grimReaper}
     isGlobal={true}
   />,
-  /*
-  <NormalDialogue
-    text={[`And take the rest of them too! They were colluding`]}
-    image={spiderMC}
-    isGlobal={true}
-  />,
-  */
-  /*
-   <NormalDialogue
-    text={[`We had jus' taken a soul to th'other side. We were walkin' along the veil.`]}
-    image={spiderMC}
-    isGlobal={true}
-  />,
-  */
   <NormalDialogue
     text={[`Take my scythe. Please, rescue my buddy.`]}
-    image={spiderMC}
+    image={grimReaper}
     isGlobal={true}
   />,
   <NormalDialogue
@@ -979,7 +1022,7 @@ const dialogue2024 = [
   />,
   <NormalDialogue
     text={[
-      `A spider crawled on to one of the skeletons before they went through the portal. They're in ${weaverLocation}!`,
+      `A spider crawled on one of the skeletons before they went through the portal. They're in ${weaverLocation}!`,
     ]}
     image={buffSpider}
     isGlobal={true}
@@ -997,16 +1040,17 @@ const dialogue2024 = [
     ]}
     image={spiderMC}
     isGlobal={true}
+    audio={runescapeHalloween}
   />,
   <NormalDialogue
     text={[
-      `Individually, or in groups, respond to her questions. Careful, your ${lifeLine} is on the line!`,
+      `Individually, or in groups, respond to her questions. Careful, your ${lifeLine}s are on the line!`,
     ]}
     isGlobal={true}
   />,
   <NormalDialogue
     text={[
-      `Hold on, what are you doing with a Grim Reaper scythe?`,
+      `Why do you have a Grim Reaper scythe?`,
       `1. Friends with Grim Reaper`,
       `2. Cut the web`,
       `3. I don't know, he just gave it to us`,
@@ -1037,7 +1081,7 @@ const dialogue2024 = [
       `1. We are Grim Reapers too`,
       `2. We have spider venom`,
       `3. We're going to bring it to another Grim Reaper`,
-      `4. It's our ${lifeLine}s`,
+      `4. It's made from our ${lifeLine}s`,
       `5. The Grim Weaver will cut it`,
     ]}
     image={spiderMC}
@@ -1068,7 +1112,12 @@ const dialogue2024 = [
         valid: false,
       },
       {
-        option: [`4`, `4.`, `4. It's our ${lifeLine}s`, `${lifeLine}s`],
+        option: [
+          `4`,
+          `4.`,
+          `4. It's made from our ${lifeLine}s`,
+          `${lifeLine}s`,
+        ],
         response: `Your ${lifeLine}s were used to build the web?`,
         valid: true,
       },
@@ -1081,58 +1130,25 @@ const dialogue2024 = [
   />,
   <NormalDialogue
     text={[
-      `Of course! Because it's your ${lifeLine}, you can also cut it!
+      `Of course! It's a lesser-known fact, but using a scythe, one can cut their own ${lifeLine}s, that means you can also cut the web!
        But if that Grim Reaper is in league with those evil ghouls, why would he want to cut the web?`,
       `1. His partner`,
       `2. For money`,
       `3. Lighter sentence`,
       `4. He forgot whose side he's on`,
     ]}
+    audio={prettySadPiano}
     image={spiderMC}
     isGlobal={true}
     answerOptions={[
       {
         option: ["1", "1.", `1. His partner`, `partner`],
-        response: `That's a good point, where IS his partner.`,
+        response: `His partner? Right, where IS his partner?`,
         valid: true,
       },
       {
         option: [`2`, `2.`, `2. For money`, `Money`],
-        response: `And I bet you want a cut of the money too?! *bites* (Lose one ${lifeLine} and take a penalty)`,
-        valid: false,
-      },
-      {
-        option: [`3`, `3.`, `3. Lighter sentence`, `3. sentence`],
-        response: `Not happening. (Take a penalty)`,
-        valid: false,
-      },
-      {
-        option: [`4`, `4.`, `4. He forgot whose side he's on`, `side`],
-        response: `And what about you? Whose side are YOU on *bites* (Take a penalty)`,
-        valid: false,
-      },
-    ]}
-  />,
-  <NormalDialogue
-    text={[
-      `Of course! Because it's your ${lifeLine}, you can also cut it!
-       But if that Grim Reaper is in league with those evil ghouls, why would he want to cut the web?`,
-      `1. His partner`,
-      `2. For money`,
-      `3. Lighter sentence`,
-      `4. He forgot whose side he's on`,
-    ]}
-    image={spiderMC}
-    isGlobal={true}
-    answerOptions={[
-      {
-        option: ["1", "1.", `1. His partner`, `partner`],
-        response: `That's a good point, where IS his partner.`,
-        valid: true,
-      },
-      {
-        option: [`2`, `2.`, `2. For money`, `Money`],
-        response: `And I bet you want a cut of the money too?! *bites* (Lose one ${lifeLine} and take a penalty)`,
+        response: `And I bet you want a cut of the money too?! *bites* (Lose one ${pointName} and take a penalty)`,
         valid: false,
       },
       {
@@ -1155,58 +1171,26 @@ const dialogue2024 = [
   <NormalDialogue
     text={[
       `His partner was the hostage? That explains why he was helping them out. But I still don't trust him. We'll figure this out on our own.`,
-      `1. His partner`,
-      `2. For money`,
-      `3. Lighter sentence`,
-      `4. He forgot whose side he's on`,
-    ]}
-    image={spiderMC}
-    isGlobal={true}
-    answerOptions={[
-      {
-        option: ["1", "1.", `1. His partner`, `partner`],
-        response: `That's a good point, where IS his partner.`,
-        valid: true,
-      },
-      {
-        option: [`2`, `2.`, `2. For money`, `Money`],
-        response: `And I bet you want a cut of the money too?! *bites* (Lose one ${lifeLine} and take a penalty)`,
-        valid: false,
-      },
-      {
-        option: [`3`, `3.`, `3. Lighter sentence`, `3. sentence`],
-        response: `Not happening. (Take a penalty)`,
-        valid: false,
-      },
-      {
-        option: [`4`, `4.`, `4. He forgot whose side he's on`, `side`],
-        response: `And what about you? Whose side are YOU on *bites* (Take a penalty)`,
-        valid: false,
-      },
-    ]}
-  />,
-  <NormalDialogue
-    text={[
-      `His partner was the hostage? That explains why he was helping them out. But I still don't trust him. We'll figure this out on our own.`,
     ]}
     image={spiderMC}
     isGlobal={true}
   />,
   <NormalDialogue
     text={[
-      `Those ghouls will be expecting a spider raid. They won't be expecting YOU to come visit ${weaverLocation}.
+      `Those ghouls will be expecting a spider raid. They won't be expecting YOU to show up and cut the web!
       Will you help us free the Grim Weaver?`,
       `1. Yes`,
       `2. No`,
       `3. I have to deliver a drink first`,
       `4. I'll do it for $5`,
+      `5. Okay`,
     ]}
     image={spiderMC}
     isGlobal={true}
     answerOptions={[
       {
         option: ["1", "1.", `1. Yes`, `Yes`],
-        response: `Fantastic! (Gain one ${lifeLine})`,
+        response: `Fantastic! (Gain one ${pointName})`,
         valid: true,
       },
       {
@@ -1216,7 +1200,7 @@ const dialogue2024 = [
       },
       {
         option: [`3`, `3.`, `3. I have to deliver a drink first`, `3. drink`],
-        response: `- You deliver the drink. The ticketmaster is so grateful, you gain one ${lifeLine} (And cheers with someone/a spider) -`,
+        response: `- You deliver the drink. The ticketmaster is so grateful, you gain one ${pointName} (And cheers with someone/a spider) -`,
         valid: false,
       },
       {
@@ -1225,57 +1209,480 @@ const dialogue2024 = [
         valid: true,
       },
       {
-        option: [`Okay`, `ok`, `k`, `sure`, `whatever`],
+        option: ["5", "5.", `Okay`, `ok`, `k`, `sure`, `whatever`],
         response: `Well don't sound TOO enthusiastic!`,
         valid: true,
       },
     ]}
   />,
-  // TODO finish this
   <NormalDialogue
     text={[
-      `The web used to catch the Grim Weaver was made of your ${lifeLine}s.
-      It can only be cut by a Grim Reaper, whose scythe has been coated in the venom of the spider who weaved it.
-      To prevent the web from being cut, they will probably try to kill my cousin... assuming she isn't dead yet.
-      `,
+      `There are a lot of traps in the crypt, so you'll have to hang from the ceiling to avoid them, using a web.
+      Since you're not a spider, you'll get stuck to the web and get all tangled up.`,
     ]}
-    image={spiderPartner}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={[
-      // The other spiders think that Grim Reaper is on the side of the evil ghouls, so they won't let him go on the rescue.
-      `Oh! He gave YOU his scythe? But why...?`,
-      `Of course! They're your ${lifeLine}s so you can also cut them with a scythe!`,
-    ]}
-    image={spiderPartner}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={[
-      `The spiders are planning on rescuing the Grim Weaver in the web, and figuring out how to cut it later, which is exactly what the evil ghouls are expecting!
-      They won't be expecting YOU to show up and cut the web!`,
-    ]}
-    image={spiderPartner}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={[
-      `There are a lot of traps in the crypt, so you'll have to hang from the ceiling, using a web.
-      Oh, but you'll get stuck to the web, won't you?`,
-    ]}
-    image={spiderPartner}
+    image={spiderMC}
     isGlobal={true}
   />,
   <NormalDialogue
     text={[`Well, luckily, there's a potion for that!`]}
-    image={spiderPartner}
+    image={spiderMC}
     isGlobal={true}
   />,
   potionGame,
   <NormalDialogue
-    text={["Happy Halloween!"]}
-    image={placeholder}
+    text={[`Now to go to ${weaverLocation}. I'll send you with my assistants.`]}
+    image={spiderMC}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={[`Hm`]} image={buffSpider} isGlobal={true} />,
+  <NormalDialogue
+    text={[`Helloooooo`]}
+    image={spiderPartnerIntro}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `To open a portal to the graveyard, you must use spider magic, using this enchanted instrument. It requires a creature with at least 6 limbs to play.`,
+    ]}
+    image={spiderMC}
+    isGlobal={true}
+    audio={itsy}
+  />,
+  <NormalDialogue
+    text={[`My arms are too beefy to hit the keys...`]}
+    image={buffSpider}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Someone else will have to play it then!`]}
+    image={spiderMC}
+    isGlobal={true}
+  />,
+  pianoPortalGame,
+  <NormalDialogue
+    text={[
+      `Nice job! Now we're in the graveyard! Not sure why didn't you just ask me to play it though.`,
+    ]}
+    image={spiderPartner}
+    isGlobal={true}
+  />,
+  /*<NormalDialogue
+    text={[`My arms are too beefy to hit the keys...`]}
+    image={buffSpider}
+    isGlobal={true}
+  />,*/
+  /*
+  <NormalDialogue
+    text={[
+      `Rats! ${weaverLocation} is locked! And Rats! Our spider scouts were eaten by rats! We need to get them back!`,
+    ]}
+    image={spiderPartner}
+    isGlobal={true}
+  />,
+  dissectionGame,
+  // TODO scene change?
+  <NormalDialogue
+    text={["What's the code?"]}
+    answers={["Boogieman"]}
+    isGlobal={true}
+  />,
+  */
+  // TODO - receive the scythes
+  <NormalDialogue
+    text={[`The ${weaverLoc} is open...`]}
+    image={spiderPartner}
+    isGlobal={true}
+    audio={spooky_sad}
+  />,
+  <NormalDialogue
+    text={[`I'm buff, and I find this concerning...`]}
+    image={buffSpider}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `They're probably expecting us. You need to be able to defend yourselves... maybe you can use the scythe.`,
+    ]}
+    image={spiderPartner}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Everyone take a piece of the scythe`]}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `This is great! They're all imbued with undead energy. Here, I'll give you some spider magic, too!`,
+      `But we should make sure you can wield them before we go in.`,
+    ]}
+    image={spiderPartner}
+    isGlobal={true}
+  />,
+  webPictionary,
+  <NormalDialogue
+    text={[`My buff hands crush every pencil. I also cannot draw.`]}
+    image={buffSpider}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `Yeah, okay, anyways. We've attached these webs to the ceiling, so you can move through the ${weaverLoc} without touching the floor.
+       Let's go!`,
+    ]}
+    image={spiderPartner}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={[`...`]} image={spiderPartner} isGlobal={true} />,
+  <NormalDialogue text={[`We're in.`]} image={spiderPartner} isGlobal={true} />,
+  <NormalDialogue text={[`...`]} image={spiderPartner} isGlobal={true} />,
+  <NormalDialogue text={[`Uh oh.`]} image={spiderPartner} isGlobal={true} />,
+  // or summoning stones to summon reinforcements
+  <NormalDialogue
+    text={[
+      `There are a lot of bombs on the ground... When they notice us, they'll probably detonate them. Even if we avoid the bombs, the ceiling will crush us!`,
+    ]}
+    image={spiderPartner}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Nothing can crush me.`]}
+    image={buffSpider}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`But we'll still get crushed! We have to get rid of them!`]}
+    image={spiderPartner}
+    isGlobal={true}
+  />,
+  relayGame2,
+  <NormalDialogue
+    text={[`Phew! Now we can get to the main area!`]}
+    image={spiderPartner}
+    isGlobal={true}
+    audio={ominousMusic}
+  />,
+  <NormalDialogue
+    text={[`*dramatic gasp*`]}
+    image={spiderPartner}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `The Grim Weaver is enveloped in ghost energy behind the web! We have to free them!`,
+    ]}
+    image={spiderPartner}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`You guys gotta hide!`]}
+    image={blackWidowPal}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`You're the hostage! Are you okay?`]}
+    image={spiderPartner}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`No time for that! Hide!`]}
+    image={blackWidowPal}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`...okay you guys are too big to hide. Just... act natural.`]}
+    image={blackWidowPal}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Hah! I knew you spiders would come!`]}
+    image={evilGuy2}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `Wait, you're not spiders, what are you doing here? (Respond individually or as a group)`,
+      `1. We're spiders`,
+      `2. We're trick-or-treaters`,
+      `3. We're humans`,
+      `4. We're graverobbers`,
+      `5. We're future skeletons`,
+      `6. We're from the union`,
+    ]}
+    image={evilGuy2}
+    isGlobal={true}
+    answerOptions={[
+      {
+        option: ["1.", "1"],
+        response: `You're a spider!? *smack* (lose one ${pointName} and take a penalty). Wait, you don't look like spiders... are you sure?`,
+        valid: false,
+      },
+      {
+        option: ["2", "2."],
+        response: `Oh... uh... I don't have any candy for you. How about this! *cheers* (take a sip).`,
+        valid: true,
+      },
+      {
+        option: ["3", "3."],
+        response: `Okay? And???`,
+        valid: false,
+      },
+      {
+        option: ["4", "4."],
+        response: `I have a grave here! You better not have stolen any of MY stuff! *smack* (lose one ${pointName} and take a penalty)`,
+        valid: true,
+      },
+      {
+        option: ["5", "5."],
+        response: `You're not skeletons yet! So come back when you are!`,
+        valid: true,
+      },
+      {
+        option: ["6", "6."],
+        response: `Boss told us not to talk to you! *smack* (take a penalty)`,
+        valid: true,
+      },
+      {
+        option: ["soup"],
+        response: `Mmm... soup... wait, who are you?`,
+        valid: false,
+      },
+    ]}
+  />,
+  <NormalDialogue
+    text={[
+      `We're busy preparing for other "guests". You better be out of here by the time I come back!`,
+    ]}
+    image={evilGuy2}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Well, that could have gone worse.`]}
+    image={spiderPartner}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Now, let's free the Grim Weaver before they come back!`]}
+    image={spiderPartner}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`I'm still here.`]}
+    image={evilGuy2}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={[`🤦‍♀️`]} image={blackWidowPal} isGlobal={true} />,
+  <NormalDialogue
+    text={[`Oh. Uh... forget you heard that.`]}
+    image={spiderPartner}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={[`Okay :3`]} image={evilGuy2} isGlobal={true} />,
+  <NormalDialogue
+    text={[`You are 100% fired`]}
+    image={evilGuy1}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={[`:(`]} image={evilGuy2} isGlobal={true} />,
+  <NormalDialogue
+    text={[`Ghouls! Attack them!`]}
+    image={evilGuy1}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Your scythes contain undead energy! You can fight!`]}
+    image={spiderPartner}
+    isGlobal={true}
+  />,
+  finalGame,
+  <BossBattle />,
+  <NormalDialogue
+    text={[
+      `Ugh... you think you've won? We're in a graveyard! There are countless souls outside awaiting my command!`,
+    ]}
+    image={evilGuy1}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Quick! We have to free the Grim Weaver!`]}
+    image={spiderPartner}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Hah! I know you're bluffing! Only a Grim Reaper can do that!`]}
+    image={evilGuy1}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `Oh no... you're right... *whispering* they don't suspect a thing! Free the Grim Weaver before they catch on!`,
+    ]}
+    image={spiderPartner}
+    isGlobal={true}
+  />,
+  freeTheWeaver,
+  <NormalDialogue
+    text={[""]}
+    image={grimWeaver}
+    isGlobal={true}
+    audio={midnight_halloween}
+  />,
+  <NormalDialogue text={[`Uh-oh`]} image={evilGuy1} isGlobal={true} />,
+  <NormalDialogue
+    text={[
+      `With the Grim Weaver's webs, we can take them all back to the party!`,
+    ]}
+    image={spiderPartner}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`One spooky scary portal spell later...`]}
+    isGlobal={true}
+  />, // maybe do spongebob
+  <NormalDialogue
+    text={[`You're back! With the Grim Weaver! And the evil ghouls!`]}
+    image={spiderMC}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `And we're getting out of here! We're ghosts! Not like you can stop us with your webs!`,
+    ]}
+    image={evilGuy1}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[``]}
+    image={grimWeaver}
+    isGlobal={true}
+    audio={scarySpiderMusic}
+  />,
+  <NormalDialogue text={[`...huh?`]} image={evilGuyWebbed} isGlobal={true} />,
+  <NormalDialogue
+    text={[`The Grim Weaver can even make ectoplasm webs!`]}
+    image={spiderMC}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`And now the Grim Weaver will decide your fate...`]}
+    image={spiderMC}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={[``]} image={grimWeaver} isGlobal={true} />,
+  <NormalDialogue
+    text={[`100 years of community service!`]}
+    image={spiderMC}
+    isGlobal={true}
+    audio={halloween_dance}
+  />,
+  <NormalDialogue text={[`What`]} image={evilGuyWebbed} isGlobal={true} />,
+  <NormalDialogue
+    text={[
+      `You can start by helping to reweave the ${lifeLine}s you stole! Of course, you can't weave them yourselves, so instead you'll act as a black widow's assistant.`,
+    ]}
+    image={spiderMC}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `As your new boss, I'll be sure to treat you as nicely as you treated me >:)`,
+    ]}
+    image={blackWidowPal}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={[`*gulp*`]} image={evilGuyWebbed} isGlobal={true} />,
+  <NormalDialogue
+    text={[
+      `As for that Grim Reaper... why did you help these guys?! Why didn't you ask us to rescue your partner!`,
+    ]}
+    image={spiderMC}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `I made a magical deal with em'. As long as I didn't talk to no spiders, or talk about their plan, they wouldn' hurt my buddy.`,
+    ]}
+    image={grimReaper}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={[`🥺`]} image={blackWidowPal} isGlobal={true} />,
+  <NormalDialogue text={[``]} image={grimWeaver} isGlobal={true} />,
+  <NormalDialogue
+    text={[`The Grim Weaver has decided you're free to go.`]}
+    image={spiderMC}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={[`Hurray!`]} image={grimReaper} isGlobal={true} />,
+  <NormalDialogue
+    text={[`As long as you also help rebuild the webs.`]}
+    image={spiderMC}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`I got no problem with that!`]}
+    image={grimReaper}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={[`Yay!`]} image={blackWidowPal} isGlobal={true} />,
+  <NormalDialogue text={[``]} image={bffs} isGlobal={true} />,
+  <NormalDialogue
+    text={[
+      `And to you all, thank you for rescuing the Grim Weaver! We will weave you up some new ${lifeLine}s that are nice and long.`,
+    ]}
+    image={spiderMC}
+    isGlobal={true}
+  />,
+  <NormalDialogue text={[``]} image={grimWeaver} isGlobal={true} />,
+  <NormalDialogue
+    text={["And the Grim Weaver will ensure your fates are favourable."]}
+    image={spiderMC}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      "Some of you worked extra hard to help us, and for that, we will give you a gift.",
+    ]}
+    image={spiderMC}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Those with the longest ${lifeLine}s can choose their prize.`]}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`Some need to get stronger...`]}
+    image={buffSpider}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`And some need to let loose!`]}
+    image={buffSpider}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`The three with the shortest ${lifeLine}s take 5 penalties`]}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      "Despite the chaotic start to this evening, the night is only just beginning!",
+    ]}
+    image={spiderMC}
+    audio={rave}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["Yaaas! Let's party!"]}
+    image={purpleSpiderWink}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={["Happy Halloween!!"]}
+    image={skeletonNPC}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[`(Happy Halloween)`]}
+    image={grimWeaver}
     isGlobal={true}
   />,
   <NormalDialogue text="HAPPY HALLOWEEN!" image={endCard} isGlobal={true} />,
@@ -1283,7 +1690,7 @@ const dialogue2024 = [
 
 // TODO - all areas have same dialogue, depending on team, return different order (future task when needed)
 export const getDialogue = (team: string) => {
-  return dialogue2024;
+  return dialogue2026;
 };
 
 export default getDialogue;

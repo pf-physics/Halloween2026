@@ -13,7 +13,12 @@ import { useState } from "react";
 import { useAppSelector } from "../store/hooks";
 import { TeamChoice } from "./SharedComponents";
 import { useIncPoints } from "../hooks/pointsHooks";
-import { cheatingRulesList } from "../dialogue/dialogue-list";
+
+export const cheatingRulesList = [
+  `Take a penalty to try and cheat.`,
+  `Roll a dice. If you roll {3, 4, 5, 6} you cheat successfully. If you roll {1, 2}, you are caught!`,
+  `If you fail to cheat take two more penalties and the cheating penalty.`,
+];
 
 export default function MenuDropDown() {
   const teams = useAppSelector((state) => state.teams.value);
@@ -184,7 +189,7 @@ export default function MenuDropDown() {
 
   const ToggleAutoSync = () => {
     const [autoSync, setAutoSync] = useState(
-      localStorage.getItem("autoSync") === "true"
+      localStorage.getItem("autoSync") === "true",
     );
 
     const toggleAutoSync = () => {
@@ -239,10 +244,6 @@ export default function MenuDropDown() {
           <div style={style} className="modal-content">
             <ToggleAutoSync />
           </div>
-        ) : modalRender === "cheating" ? (
-          <div style={style} className="modal-content">
-            <CheatingRules />
-          </div>
         ) : (
           <div style={style} className="modal-content">
             <div className="modal-title">Reset Code</div>
@@ -279,9 +280,6 @@ export default function MenuDropDown() {
         </MenuItem>
         <MenuItem onClick={handleMenuClick("autosync")}>
           <div className="menu-dropdown">Toggle Autosync</div>
-        </MenuItem>
-        <MenuItem onClick={handleMenuClick("cheating")}>
-          <div className="menu-dropdown">Cheating Rules</div>
         </MenuItem>
       </Menu>
     </div>

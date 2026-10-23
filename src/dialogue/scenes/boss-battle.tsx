@@ -32,17 +32,15 @@ const BossRules = () => {
 
   if (battleOver) {
     return (
-      <NormalDialogue text="The amulet is sealed, nothing to fight, so go party!" />
+      <NormalDialogue text="You already defeated the ghouls! Now it's time to party!" />
     );
   }
 
   return (
     <div>
       <video
-        src={
-          "https://storage.googleapis.com/halloween2024/halloween2025/boss_fight.mp4"
-        }
-        //autoPlay={true}
+        src={"https://storage.googleapis.com/halloween2024/FinalFight_2026.mp4"}
+        autoPlay={true}
         controls
         onEnded={handleNext}
         width="100%"
