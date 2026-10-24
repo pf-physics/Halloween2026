@@ -127,6 +127,7 @@ const spiderTicketRules = (
       `Use the webs provided to weave a ticket to get into the party`,
       `When your web is complete, take a picture of it and upload it to the group. Vote on the webs by reacting with 🕸️ on your favourite and 🕷️ on your second favourite.`,
       `1st: 3 ${pointName}s, 2nd: 2 ${pointName}s, 3rd: 1 ${pointName}.`,
+      `Write "next" to continue`,
     ]}
     stopAudio={true}
     answers={["next"]}
@@ -180,7 +181,8 @@ const foodDeliveryGame = (
       `Everyone will be provided a small spider web, which they will use to deliver the food (eyeballs) to the spiders on the other side.`,
       `When the signal is given, both groups will try to deliver as many eyes as they can. The group to deliver the most eyes wins.`,
       `Eyes that are dropped must be abandonned`,
-      `Each member of the winning team gets 3 ${pointName}. The losing team takes 2 penalties each and lose 3 ${pointName}s each.`,
+      `Each member of the winning team gets 3 ${pointName}s. The losing team takes 2 penalties each and lose 3 ${pointName}s each.`,
+      `Write "next" to continue`,
     ]}
     stopAudio={true}
     answers={["next"]}
@@ -200,6 +202,7 @@ const spiderArtGame = (
       `4: ${pointName}s: cat`,
       `5 ${pointName}s: dragon`,
       `You can come up with your own image, and ${pointName}s will be awarded based on complexity.`,
+      `Write "next" when you're all done`,
     ]}
     stopAudio={true}
     answers={["next"]}
@@ -283,8 +286,9 @@ const relayGame2 = (
       `Everyone take a web (string) and tie it up above your knees, with 1 leg of space between your knees.
         Tie a link on to a piece of string like a hook and hang it from your knees (there will be a demonstration)`,
       `Split up into two even teams and line up from the table to the window in two rows.`,
-      `Pass the bombs from person using the hook. The team to extract 6 bombs first, wins.`,
+      `Pass the bombs from person using the hook. The team to extract 7 bombs first, wins.`,
       `The winning team takes ${pointName}s from the losing team for each bomb they didn't extract. (in the case of an odd number of people, take/leave ${pointName}s from the source.)`,
+      `Write "next" to continue`,
     ]}
     stopAudio={true}
     answers={["next"]}
@@ -430,7 +434,7 @@ const dialogue2026 = [
   <NormalDialogue
     text={[
       `My spider buddy weaved yours up nice and long! And I wasn't supposed'ta cut em til far into the future.
-      But nobody else but us know what yer ${lifeLine}s're s'pposed to look like, so they, so they don't believe anything's wrong.`,
+      But nobody else but us know what yer ${lifeLine}s're s'pposed to look like, so they don't believe anything's wrong.`,
     ]}
     image={grimReaper}
     isGlobal={true}
@@ -603,14 +607,6 @@ const dialogue2026 = [
   />,
   <NormalDialogue
     text={[
-      // TODO
-      `(Stay tuned for a scene change)`,
-    ]}
-    answers={["spiderparty"]}
-    isGlobal={true}
-  />,
-  <NormalDialogue
-    text={[
       `Spiders dressed in the finest silk are dancing on the floor, crawling on the walls, and hanging from the ceiling, feasting on a variety of refreshments.
       Some of them are holding one drink with every arm (octuple fisting).`,
     ]}
@@ -675,7 +671,9 @@ const dialogue2026 = [
     isGlobal={true}
   />,
   <NormalDialogue
-    text={[`Your lifelines? Looks to me like you have plenty of time left...`]}
+    text={[
+      `Your ${lifeLine}s? Looks to me like you have plenty of time left...`,
+    ]}
     image={spiderNPC3}
     isGlobal={true}
   />,
@@ -1729,7 +1727,7 @@ const dialogue2026 = [
   />,
   <NormalDialogue
     text={[
-      `The three with the shortest ${lifeLine}s take 5 penalties, or a shot`,
+      `The three with the shortest ${lifeLine}s take 10 penalties, or a shot`,
     ]}
     isGlobal={true}
   />,
