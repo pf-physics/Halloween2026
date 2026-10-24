@@ -1,11 +1,12 @@
 {
   "files": {
-    "main.css": "/Halloween2026/static/css/main.42eab75a.css",
-    "main.js": "/Halloween2026/static/js/main.ac51f068.js",
-    "static/js/787.e8b62b7d.chunk.js": "/Halloween2026/static/js/787.e8b62b7d.chunk.js",
+    "main.css": "/Halloween2026/static/css/main.1f5d1602.css",
+    "main.js": "/Halloween2026/static/js/main.a53273fa.js",
+    "static/js/787.e6c54f33.chunk.js": "/Halloween2026/static/js/787.e6c54f33.chunk.js",
     "static/media/summoning2.mp3": "/Halloween2026/static/media/summoning2.affd5fbcce75a5569bc0.mp3",
     "static/media/fakeParty2.mp3": "/Halloween2026/static/media/fakeParty2.f694eff940fdb78d09d1.mp3",
     "static/media/itsy.mp3": "/Halloween2026/static/media/itsy.e7fa83c3518f65417422.mp3",
+    "static/media/beautiful_web.jpg": "/Halloween2026/static/media/beautiful_web.884f265a7f75c7b7a808.jpg",
     "static/media/magic_halloween.mp3": "/Halloween2026/static/media/magic_halloween.77a13add692692a2c1f5.mp3",
     "static/media/rave.mp3": "/Halloween2026/static/media/rave.cbb3ea4c5b457449aaa0.mp3",
     "static/media/bossFight.mp3": "/Halloween2026/static/media/bossFight.d50a79eed9084f5b3d87.mp3",
@@ -52,12 +53,12 @@
     "static/media/PhantomFingers.ttf": "/Halloween2026/static/media/PhantomFingers.87ac9dad3a6266ffaa6d.ttf",
     "static/media/scarycandy.otf": "/Halloween2026/static/media/scarycandy.6217d81479747a945f33.otf",
     "index.html": "/Halloween2026/index.html",
-    "main.42eab75a.css.map": "/Halloween2026/static/css/main.42eab75a.css.map",
-    "main.ac51f068.js.map": "/Halloween2026/static/js/main.ac51f068.js.map",
-    "787.e8b62b7d.chunk.js.map": "/Halloween2026/static/js/787.e8b62b7d.chunk.js.map"
+    "main.1f5d1602.css.map": "/Halloween2026/static/css/main.1f5d1602.css.map",
+    "main.a53273fa.js.map": "/Halloween2026/static/js/main.a53273fa.js.map",
+    "787.e6c54f33.chunk.js.map": "/Halloween2026/static/js/787.e6c54f33.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.42eab75a.css",
-    "static/js/main.ac51f068.js"
+    "static/css/main.1f5d1602.css",
+    "static/js/main.a53273fa.js"
   ]
 }
