@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Halloween2026/static/css/main.1f5d1602.css",
-    "main.js": "/Halloween2026/static/js/main.a53273fa.js",
+    "main.js": "/Halloween2026/static/js/main.f8cca459.js",
     "static/js/787.e6c54f33.chunk.js": "/Halloween2026/static/js/787.e6c54f33.chunk.js",
     "static/media/summoning2.mp3": "/Halloween2026/static/media/summoning2.affd5fbcce75a5569bc0.mp3",
     "static/media/fakeParty2.mp3": "/Halloween2026/static/media/fakeParty2.f694eff940fdb78d09d1.mp3",
@@ -54,11 +54,11 @@
     "static/media/scarycandy.otf": "/Halloween2026/static/media/scarycandy.6217d81479747a945f33.otf",
     "index.html": "/Halloween2026/index.html",
     "main.1f5d1602.css.map": "/Halloween2026/static/css/main.1f5d1602.css.map",
-    "main.a53273fa.js.map": "/Halloween2026/static/js/main.a53273fa.js.map",
+    "main.f8cca459.js.map": "/Halloween2026/static/js/main.f8cca459.js.map",
     "787.e6c54f33.chunk.js.map": "/Halloween2026/static/js/787.e6c54f33.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1f5d1602.css",
-    "static/js/main.a53273fa.js"
+    "static/js/main.f8cca459.js"
   ]
 }
