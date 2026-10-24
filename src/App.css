@@ -1,5 +1,5 @@
 .App {
-  background-color: #11100f;
+  background-color: transparent;
   min-height: 100vh;
   color: #902ebb;
   color: #9357fd;
@@ -7,6 +7,12 @@
   font-family: "Candy, Franklin Gothic Medium", "Arial Narrow", Arial,
     sans-serif;
   font-size: 16px;
+}
+
+html,
+body {
+  /* Disables the elastic rubber-banding bounce effect at page boundaries */
+  overscroll-behavior: none;
 }
 
 .app-content {
@@ -38,7 +44,7 @@
 }
 
 .App-header {
-  background-color: #1c1c1c;
+  background-color: #181818;
   color: #9357fd;
   font-size: 20px;
   font-weight: bold;
@@ -46,7 +52,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 15px;
 }
 
 .App-link {

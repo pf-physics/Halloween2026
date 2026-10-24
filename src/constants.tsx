@@ -4,4 +4,4 @@ export const localComponentIdx = "componentIndex";
 
 export const teamAccess = "teams";
 
-export const defaultTeam = "witches";
+export const defaultTeam = "spiders";

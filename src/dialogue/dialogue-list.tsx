@@ -63,7 +63,7 @@ import cosmicSpider2 from "../assets/imgs/cosmicspider2.png";
 import cosmicSpiderTrap from "../assets/imgs/cosmic spider trap.png";
 import spiderNPC from "../assets/imgs/spiderNPC.jpg";
 
-const eventName = "Teardown of the Veil"; // Veil Removal Ceremony
+const eventName = "Teardown of the Veil";
 const lifeLine = "life line";
 const placeholder = blackWidow;
 const ticketSpider = coolSpider;
@@ -226,6 +226,24 @@ const pianoPortalGame = (
   />
 );
 
+const skeletonCharades = (
+  <NormalDialogue
+    isGlobal={true}
+    header={"Best Skeleton Actor"}
+    text={[
+      `Everyone think of a well-known movie that contains at least ONE skeleton.`,
+      `Write it on a piece of paper and put it into the bowl.`,
+      `One at a time, pick a movie from the bowl. You have one minute to act it out. You can act our your movie, but you cannot guess your own movie`,
+      `Gain one ${pointName} for guessing correctly and one ${pointName} if your guess is acted out`,
+      `Lose one ${pointName} if the consensus is that your movie is not well known.`,
+      `Lose one ${pointName} if you put in the same movie as someone else.`,
+      `Write "Next" to continue`,
+    ]}
+    stopAudio={true}
+    answers={["next"]}
+  />
+);
+
 const potionGame = (
   <NormalDialogue
     isGlobal={true}
@@ -292,7 +310,7 @@ const freeTheWeaver = (
     isGlobal={true}
     header={`FREE THE WEAVER`}
     text={[
-      `Everyone take your scythe. Remove the markers and replace it with something pointer.`,
+      `Everyone take your scythe. Remove the markers and replace it with something pointier.`,
       `When everyone is ready, destroy the ghost energy on the ceiling holding the Grim Weaver captive!`,
       `Try to catch what is contained in the energy bubbles to find the hidden message`,
     ]}
@@ -818,7 +836,7 @@ const dialogue2026 = [
     ]}
     answerOptions={[
       {
-        option: ["Ceremony", "1", "1.", `1. ${eventName}`], // DCDCDC
+        option: ["Veil", "1", "1.", `1. ${eventName}`],
         response: `The Veil that separates our world and the world of the dead was woven by the Grim Weaver.
                   A week before Halloween, the Veil is taken down by the Grim Weaver for repairs, allowing the dead to come through for a week of festivities! A week later, all creatures return to their side as the new Veil is put up, or they'll die here!`,
         valid: false,
@@ -848,7 +866,6 @@ const dialogue2026 = [
     text={[`Oh! It's starting!`]}
     image={spiderNPC2_2}
     isGlobal={true}
-    // TODO - audio!
   />,
   <NormalDialogue
     text={[
@@ -1336,7 +1353,6 @@ const dialogue2026 = [
   <NormalDialogue text={[`We're in.`]} image={spiderPartner} isGlobal={true} />,
   <NormalDialogue text={[`...`]} image={spiderPartner} isGlobal={true} />,
   <NormalDialogue text={[`Uh oh.`]} image={spiderPartner} isGlobal={true} />,
-  // or summoning stones to summon reinforcements
   <NormalDialogue
     text={[
       `There are a lot of bombs on the ground... When they notice us, they'll probably detonate them. Even if we avoid the bombs, the ceiling will crush us!`,
@@ -1405,7 +1421,7 @@ const dialogue2026 = [
       `2. We're trick-or-treaters`,
       `3. We're humans`,
       `4. We're graverobbers`,
-      `5. We're future skeletons`,
+      `5. We're skeletons`,
       `6. We're from the union`,
     ]}
     image={evilGuy2}
@@ -1419,7 +1435,7 @@ const dialogue2026 = [
       {
         option: ["2", "2."],
         response: `Oh... uh... I don't have any candy for you. How about this! *cheers* (take a sip).`,
-        valid: true,
+        valid: false,
       },
       {
         option: ["3", "3."],
@@ -1429,17 +1445,17 @@ const dialogue2026 = [
       {
         option: ["4", "4."],
         response: `I have a grave here! You better not have stolen any of MY stuff! *smack* (lose one ${pointName} and take a penalty)`,
-        valid: true,
+        valid: false,
       },
       {
         option: ["5", "5."],
-        response: `You're not skeletons yet! So come back when you are!`,
+        response: `You're skeletons?!`,
         valid: true,
       },
       {
         option: ["6", "6."],
         response: `Boss told us not to talk to you! *smack* (take a penalty)`,
-        valid: true,
+        valid: false,
       },
       {
         option: ["soup"],
@@ -1448,9 +1464,62 @@ const dialogue2026 = [
       },
     ]}
   />,
+
   <NormalDialogue
     text={[
-      `We're busy preparing for other "guests". You better be out of here by the time I come back!`,
+      `You don't look like skeletons`,
+      `1. We're future skeletons`,
+      `2. We're actors`,
+      `3. We do look like skeletons`,
+      `4. We lied`,
+    ]}
+    image={evilGuy2}
+    isGlobal={true}
+    answerOptions={[
+      {
+        option: ["1.", "1"],
+        response: `If you're not a skeleton yet, then I don't care! (take a penalty)`,
+        valid: false,
+      },
+      {
+        option: ["2", "2."],
+        response: `You're actors? So... you don't look like skeletons cause you're acting?`,
+        valid: true,
+      },
+      {
+        option: ["3", "3."],
+        response: `No, you don't!`,
+        valid: false,
+      },
+      {
+        option: ["4", "4."],
+        response: `Why would you lie to me?! *smack* (lose one ${pointName} and take a penalty)`,
+        valid: false,
+      },
+      {
+        option: ["soup"],
+        response: `Mmm... soup... wait, who are you?`,
+        valid: false,
+      },
+    ]}
+    defaultAnswerOption="What are you mumbling about?!"
+  />,
+  <NormalDialogue
+    text={[`If you're really skeleton actors, then prove it!`]}
+    image={evilGuy2}
+    isGlobal={true}
+  />,
+  skeletonCharades,
+  <NormalDialogue
+    text={[
+      `Wow! Real skeleton actors! But some of you seem like extras, no offense...`,
+    ]}
+    image={evilGuy2}
+    isGlobal={true}
+  />,
+  <NormalDialogue
+    text={[
+      `I'll go get the boss so he can initiate you into our organization!`,
     ]}
     image={evilGuy2}
     isGlobal={true}
@@ -1537,7 +1606,7 @@ const dialogue2026 = [
   <NormalDialogue
     text={[`One spooky scary portal spell later...`]}
     isGlobal={true}
-  />, // maybe do spongebob
+  />,
   <NormalDialogue
     text={[`You're back! With the Grim Weaver! And the evil ghouls!`]}
     image={spiderMC}
@@ -1655,11 +1724,13 @@ const dialogue2026 = [
   />,
   <NormalDialogue
     text={[`And some need to let loose!`]}
-    image={buffSpider}
+    image={spiderPartner}
     isGlobal={true}
   />,
   <NormalDialogue
-    text={[`The three with the shortest ${lifeLine}s take 5 penalties`]}
+    text={[
+      `The three with the shortest ${lifeLine}s take 5 penalties, or a shot`,
+    ]}
     isGlobal={true}
   />,
   <NormalDialogue

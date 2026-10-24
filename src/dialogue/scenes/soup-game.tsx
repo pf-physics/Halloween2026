@@ -33,7 +33,6 @@ const SoupGame = () => {
   const handleSubmit = () => {
     // DCDC - real code
     if (ans.toLocaleLowerCase() === "faedc") {
-      console.log("yay");
       handleNext();
     } else {
       if (ans === exampleCode) {

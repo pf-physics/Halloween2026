@@ -48,7 +48,6 @@ const CodeHandler = () => {
       setCodeValid(true);
       const team = localStorage.getItem("team");
       const teamsObj = (await get(ref(db, code + "/" + teamAccess))).val();
-      console.log(teamsObj);
       const teamList = Object.keys(teamsObj);
       dispatch(setTeams(teamList));
 

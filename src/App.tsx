@@ -6,6 +6,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Menu from "./misc/Menu";
 import { useAppSelector } from "./store/hooks";
 import { useGetPoints } from "./hooks/pointsHooks";
+import nice_img from "../src/assets/imgs/beautiful_web.jpg";
 
 const theme = createTheme({
   palette: {
@@ -32,6 +33,20 @@ function App() {
       <ThemeProvider theme={theme}>
         {!fullScreen && (
           <header className="App-header">
+            <div
+              style={{
+                position: "fixed",
+                top: 0,
+                left: 0,
+                width: "100vw",
+                height: "100vh", // 💡 Forces height to fill the full viewport height
+                backgroundImage: `url(${nice_img})`,
+                backgroundSize: "cover",
+                backgroundPosition: "left",
+                opacity: 0.2,
+                zIndex: -1,
+              }}
+            />
             <div>Halloween 2026</div>
             <Menu />
           </header>
